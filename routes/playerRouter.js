@@ -22,12 +22,14 @@ playerRouter.use(bodyParser.json());
 
 // Middleware để upload ảnh lên Cloudinary
 const uploadImage = async (req, res, next) => {
-  const file = req.file;
-  console.log(file)
-  if (file) {
+  const files = req.files;
+  console.log(files);
+  if (files && files.length > 0) {
     try {
-      const result = await cloudinary.uploader.upload(file.path);
-      req.body.image = result.secure_url; // Lấy URL của ảnh và gán vào dữ liệu
+      const imageUrls = await Promise.all(
+        files.map((file) => cloudinary.uploader.upload(file.path))
+      );
+      req.body.images = imageUrls.map((result) => result.secure_url);
     } catch (error) {
       console.error(error);
       req.flash("error_msg", "Upload failed");
@@ -36,6 +38,7 @@ const uploadImage = async (req, res, next) => {
   }
   next();
 };
+
 
 playerRouter
   .route("/")

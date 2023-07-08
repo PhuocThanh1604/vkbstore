@@ -310,7 +310,7 @@ class PlayerController {
   create = async (req, res, next) => {
     const data = {
       name: req.body.name,
-      image: req.body.image, // Sử dụng URL của ảnh đã lấy từ Cloudinary
+      images: req.body.images, // Sử dụng URL của ảnh đã lấy từ Cloudinary
       career: req.body.career,
       position: req.body.position,
       goals: req.body.goals,

@@ -28,13 +28,13 @@
                             <form method="post" action="/players" enctype="multipart/form-data">
                                 <div class="field is-horizontal">
                                     <div class="field-label is-normal">
-                                        <label class="label">Name</label>
+                                        <label class="label">Tên sản phẩm</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
                                             <div class="control">
                                                 <input class="input is-info" name="name" type="text"
-                                                    placeholder="e.g. Messi" required>
+                                                    placeholder="e.g. asus" required>
                                             </div>
                                         </div>
                                     </div>
@@ -51,7 +51,9 @@
                                                     <label class="file-label">
                                                         <!-- <input class="file-input" type="file" name="file" required onchange="handleFileSelect(event)"> -->
 
-                                                        <input class="file-input" type="file" name="file" >
+                                                        <!-- <input class="file-input" type="file" name="file" > -->
+                                                        <input class="file-input" type="file" name="images" multiple>
+
                                                         <!-- <input class="input is-info" type="text" name="file" required> -->
                                                         <span class="file-cta">
                                                             <span class="file-icon">
@@ -74,7 +76,7 @@
 
                                 <div class="field is-horizontal">
                                     <div class="field-label is-normal">
-                                        <label class="label">Position</label>
+                                        <label class="label">Bảo Hành</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field is-narrow">
@@ -100,7 +102,7 @@
                                         <div class="field">
                                             <div class="control">
                                                 <input class="input is-info" name="goals" type="number"
-                                                    placeholder="Number of goals" required>
+                                                    placeholder="Số lượng của sản phẩm" required>
                                             </div>
 
                                         </div>
@@ -133,7 +135,7 @@
                                     <div class="field-body">
                                         <div class="field ">
                                             <div class="control">
-                                                <textarea class="textarea" placeholder="Let's career"
+                                                <textarea class="textarea" placeholder="Hãy viết mô tả sản phẩm"
                                                     name="career"></textarea>
                                             </div>
                                         </div>
@@ -142,7 +144,7 @@
                                 <div class="field is-horizontal"
                                     style="display: flex; justify-content: center; align-items: center;">
                                     <div class="field-label is-normal">
-                                        <label class="label" style="padding-bottom: 10px;">isCaptain</label>
+                                        <label class="label" style="padding-bottom: 10px;">Trạng Thái</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
@@ -173,17 +175,17 @@
                 </div>
                 <form id="search-form" style="margin-top: 10px; margin-left: 200px; margin-right: 200px;">
                     <p class="control has-icons-left">
-                        <input class="input" type="text" placeholder="Search player(s) by name..." id="search-keyword">
+                        <input class="input" type="text" placeholder="Tìm kiếm theo tên sản phẩm..." id="search-keyword">
                         <span class="icon is-small is-left">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </span>
                       </p>
                 </form>
                 <div class="box" style="background-color: hsl(171, 100%, 41%); padding:20px; margin-top: 10px; margin-left: 200px; width: 20vw;">
-                <div style="font-size: 20px; font-weight: 700;"><i class="fa-solid fa-filter" style="margin-right: 5px;"></i>Filter</div>
+                <div style="font-size: 20px; font-weight: 700;"><i class="fa-solid fa-filter" style="margin-right: 5px;"></i>Lọc</div>
                     <div class="field is-horizontal">
                         <div class="field-label is-normal">
-                            <label class="label">Position</label>
+                            <label class="label">Bảo Hành</label>
                         </div>
                         <div class="field-body">
                             <div class="field is-narrow">
@@ -191,7 +193,7 @@
                                     <div class="select is-fullwidth">
                                         <select name="filter-position" id="filter-position">
                                             <option value="">
-                                                Filter By Postion
+                                               Lọc theo bảo hành
                                             </option>
                                             <%for (let position of positionList){ %>
                                                 <option value="<%= position.name %>">
@@ -206,7 +208,7 @@
                     </div>
                     <div class="field is-horizontal">
                         <div class="field-label is-normal">
-                            <label class="label">Nation</label>
+                            <label class="label">Loại sản phẩm</label>
                         </div>
                         <div class="field-body">
                             <div class="field is-narrow">
@@ -214,7 +216,7 @@
                                     <div class="select is-fullwidth">
                                         <select name="filter-nation" id="filter-nation">
                                             <option value="">
-                                                Filter By Nation Name
+                                               Lọc theo loại sản phẩm
                                             </option>
                                             <%for (let nation of nationsList){ %>
                                                 <option value="<%= nation._id %>">
@@ -238,11 +240,11 @@
                                 <tr>
                                     <th style="text-align: center;">Image</th>
                                     <th style="text-align: center;">Name</th>
-                                    <th style="text-align: center;">Carrer</th>
-                                    <th style="text-align: center;">Postion</th>
+                                    <th style="text-align: center;">Mô tả</th>
+                                    <th style="text-align: center;">Bảo Hành</th>
                                     <th style="text-align: center;">Goals</th>
                                     <th style="text-align: center;">Nation</th>
-                                    <th style="text-align: center;">isCaptain</th>
+                                    <th style="text-align: center;">Trạng Thái</th>
                                     <th style="text-align: center;">Actions</th>
                                 </tr>
                             </thead>
