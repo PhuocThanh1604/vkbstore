@@ -307,44 +307,46 @@ class PlayerController {
   //       return res.redirect("/players");
   //     });
   // }
-  create = async (req, res, next) => {
-    const data = {
-      name: req.body.name,
-      images: req.body.images, // Sử dụng URL của ảnh đã lấy từ Cloudinary
-      career: req.body.career,
-      position: req.body.position,
-      goals: req.body.goals,
-      nation: req.body.nation,
-      isCaptain: req.body.isCaptain === undefined ? false : true,
-    };
+// File create
+create = async (req, res, next) => {
+  const data = {
+    name: req.body.name,
+    images: req.body.images, // Sử dụng URL của ảnh đã lấy từ Cloudinary
+    career: req.body.career,
+    position: req.body.position,
+    goals: req.body.goals,
+    nation: req.body.nation,
+    isCaptain: req.body.isCaptain === undefined ? false : true,
+  };
 
-    try {
-      const nations = await Nations.find({});
-      if (nations.length === 0) {
-        req.flash(
-          'error_msg',
-          'Please input data of nations in Database first!!!'
-        );
-        return res.redirect('/players');
-      }
-
-      const player = new Players(data);
-      player.images = req.body.images; // Gán mảng ảnh từ req.body.images
-      await player.save();
-      
-      if (playerCheck.length > 0) {
-        req.flash('error_msg', 'DuplicateTên cầu thủ!');
-        return res.redirect('/players');
-      }
-
-      await player.save();
-      return res.redirect('/players');
-    } catch (error) {
-      console.error(error);
-      req.flash('error_msg', 'Server Error');
+  try {
+    const nations = await Nations.find({});
+    if (nations.length === 0) {
+      req.flash(
+        'error_msg',
+        'Please input data of nations in Database first!!!'
+      );
       return res.redirect('/players');
     }
-  };
+
+    const player = new Players(data);
+    player.images = req.body.images; // Gán mảng ảnh từ req.body.images
+    await player.save();
+
+    if (playerCheck.length > 0) {
+      req.flash('error_msg', 'DuplicateTên cầu thủ!');
+      return res.redirect('/players');
+    }
+
+    await player.save();
+    return res.redirect('/players');
+  } catch (error) {
+    console.error(error);
+    req.flash('error_msg', 'Server Error');
+    return res.redirect('/players');
+  }
+};
+  
 
   playerDetail(req, res, next) {
     const playerId = req.params.playerId;
