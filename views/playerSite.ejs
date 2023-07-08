@@ -251,44 +251,46 @@
                             </thead>
                             <tbody style="text-align: center;">
                                 <% players.forEach(function(player) { %>
-                                    <tr>
-                                        <td style="width: 96px; height: 144px;">
-                                            <figure>
-                                                <img src=<%=player.images %> >
-                                            </figure>
-                                        </td>
-                                        <td style="padding-top: 60px;">
-                                            <%= player.name %>
-                                        </td>
-                                        <td style="padding-top: 60px;">
-                                            <%= player.career %>
-                                        </td>
-                                        <td style="padding-top: 60px;">
-                                            <%= player.position %>
-                                        </td>
-                                        <td style="padding-top: 60px;">
-                                            <%= player.goals %>
-                                        </td>
-                                        <td style="padding-top: 60px;">
-                                            <%= player.nation.name %>
-                                        </td>
-                                        <td style="padding-top: 60px;">
-                                            <%=player.isCaptain===true ? 'Captain' : 'No' %>
-                        
-                                            <td>
-                                                <div class="buttons">
-                                                    <a href="/players/edit/<%=player.id %>"><button
-                                                            class="btn btn-primary" style="margin: 10px;">Edit</button></a>
-                                                    <a href="/players/delete/<%=player.id %>"><button
-                                                            onclick="return confirm('Are you sure ???')"
-                                                            class="btn btn-danger" style="margin: 10px;">Delete</button></a>
-                                                </div></a>
-                                           
-
-                                        </td>
-                                    </tr>
+                                  <tr>
+                                    <% player.images.forEach(function(image) { %>
+                                      <td style="width: 96px; height: 144px;">
+                                        <figure>
+                                          <img src="<%= image %>">
+                                        </figure>
+                                      </td>
                                     <% }) %>
-                            </tbody>
+                                    <td style="padding-top: 60px;">
+                                      <%= player.name %>
+                                    </td>
+                                    <td style="padding-top: 60px;">
+                                      <%= player.career %>
+                                    </td>
+                                    <td style="padding-top: 60px;">
+                                      <%= player.position %>
+                                    </td>
+                                    <td style="padding-top: 60px;">
+                                      <%= player.goals %>
+                                    </td>
+                                    <td style="padding-top: 60px;">
+                                      <%= player.nation.name %>
+                                    </td>
+                                    <td style="padding-top: 60px;">
+                                      <%= player.isCaptain ? 'Captain' : 'No' %>
+                                    </td>
+                                    <td>
+                                      <div class="buttons">
+                                        <a href="/players/edit/<%=player.id %>">
+                                          <button class="btn btn-primary" style="margin: 10px;">Edit</button>
+                                        </a>
+                                        <a href="/players/delete/<%=player.id %>" onclick="return confirm('Are you sure ???')">
+                                          <button class="btn btn-danger" style="margin: 10px;">Delete</button>
+                                        </a>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                <% }) %>
+                              </tbody>
+                              
 
                         </table>
                     </div>
