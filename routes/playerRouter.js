@@ -39,16 +39,15 @@ const uploadImage = async (req, res, next) => {
   next();
 };
 
-
 playerRouter
   .route("/")
   .get(jwtAuth, requireRole, playerController.index)
-  .post(jwtAuth, requireRole, upload.single("file"), uploadImage, playerController.create);
+  .post(jwtAuth, requireRole, upload.array("files"), uploadImage, playerController.create);
 
 playerRouter
   .route("/edit/:playerId")
   .get(jwtAuth, requireRole, playerController.formEdit)
-  .post(jwtAuth, requireRole, upload.single("file"), uploadImage, playerController.edit);
+  .post(jwtAuth, requireRole, upload.array("files"), uploadImage, playerController.edit);
 
 playerRouter.route("/:playerId").get(playerController.playerDetail);
 playerRouter.route("/delete/:playerId").get(jwtAuth, requireRole, playerController.delete);
