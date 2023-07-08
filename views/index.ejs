@@ -23,10 +23,13 @@
         <div class="column is-one-quarter">
           <div class="card">
             <div class="card-image">
-              <figure class="image is-3by5">
-                <img src="<%= player.image %>" alt="Placeholder image">
-              </figure>
+              <% player.images.forEach(function(imageUrl) { %>
+                <figure class="image is-3by5">
+                  <img src="<%= imageUrl %>" alt="Placeholder image">
+                </figure>
+              <% }); %>
             </div>
+            
             
             <div class="card-content">
 
@@ -41,7 +44,7 @@
                   <p class="subtitle is-6"><%= player.nation.name %></p>
                 </div>
               </div>
-              <a href="/players/<%=player.id%>" class="btn btn-info" style="width: 100%;">Detail</a>
+              <a href="/players/<%=player.id%>" class="btn btn-info" style="width: 100%;">Thông tin chi tiết</a>
             </div>
           </div>
         </div>

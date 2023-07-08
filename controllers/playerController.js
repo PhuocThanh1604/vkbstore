@@ -13,17 +13,9 @@ let clubData = [
   { id: '8', name: 'Barcelona' },
 ];
 let postitionData = [
-  { id: '1', name: 'GK' },
-  { id: '2', name: 'CB' },
-  { id: '3', name: 'LB' },
-  { id: '4', name: 'RB' },
-  { id: '5', name: 'SW' },
-  { id: '6', name: 'CM' },
-  { id: '7', name: 'LM' },
-  { id: '8', name: 'RM' },
-  { id: '9', name: 'ST' },
-  { id: '10', name: 'LW' },
-  { id: '11', name: 'RW' },
+  { id: '1', name: 'Còn Bảo Hành' },
+  { id: '2', name: 'Hết Bảo Hành' },
+
 ];
 class PlayerController {
   home(req, res, next) {
