@@ -329,7 +329,9 @@ class PlayerController {
       }
 
       const player = new Players(data);
-      const playerCheck = await Players.find({ name: player.name });
+      player.images = req.body.images; // Gán mảng ảnh từ req.body.images
+      await player.save();
+      
       if (playerCheck.length > 0) {
         req.flash('error_msg', 'DuplicateTên cầu thủ!');
         return res.redirect('/players');
