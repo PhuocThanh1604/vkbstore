@@ -20,6 +20,6 @@ const playerSchema = new Schema(
   { timestamps: true }
 );
 
-const Players = mongoose.model("Player", playerSchema);
+var players = mongoose.model("players", playerSchema);
 
-module.exports = Players;
+module.exports = players;
