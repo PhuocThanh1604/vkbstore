@@ -5,6 +5,7 @@ const multer = require("multer");
 const { ensureAuthenticated, jwtAuth } = require('../config/auth');
 const { requireRole } = require('../config/verifyRole');
 const cloudinary = require('cloudinary').v2;
+const Player = require("../model/player");
 
 // Cấu hình kết nối với Cloudinary
 cloudinary.config({

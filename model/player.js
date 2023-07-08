@@ -22,3 +22,6 @@ const playerSchema = new Schema(
 const Player = mongoose.model("Player", playerSchema);
 
 module.exports = Player;
+const player = new Player(data);
+player.images = req.body.images; // Gán mảng ảnh từ req.body.images
+await player.save();
