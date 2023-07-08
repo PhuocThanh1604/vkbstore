@@ -12,7 +12,7 @@ const nationRouter = require("./routes/nationRouter");
 const playerRouter = require("./routes/playerRouter");
 const userRouter = require("./routes/userRouter");
 require('./config/passport')(passport);
-const url = "mongodb+srv://vophuocthanha19052017:pthanh@cluster0.zdxr5zm.mongodb.net/databasevkbstore?retryWrites=true&w=majority";
+const url = "mongodb+srv://vophuocthanha19052017:pthanh@cluster0.zdxr5zm.mongodb.net/databasevkb?retryWrites=true&w=majority";
 const connect = mongoose.connect(url);
 // mongoose.set('strictQuery',true);
 
