@@ -14,143 +14,141 @@
     <title>VKBSTORE</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2292/2292038.png" type="image/x-icon">
 
-  <style>
-    /* CSS responsive cho navbar */
-    .navbar {
-      background-image: url('https://img.freepik.com/premium-photo/blue-sky-watercolor-effect-stains-paint-splatter-grunge-background-texture-soft-blue-pastel-website-banner-design_364465-1395.jpg');
-      height: 10vh;
-    }
+    <style>
+        /* CSS responsive cho navbar */
+        .navbar {
+            background-image: url('https://img.freepik.com/premium-photo/blue-sky-watercolor-effect-stains-paint-splatter-grunge-background-texture-soft-blue-pastel-website-banner-design_364465-1395.jpg');
+            height: 10vh;
+        }
 
-    .navbar-brand {
-      margin-right: auto;
-    }
+        .navbar-brand {
+            margin-right: auto;
+        }
 
-    .navbar-menu {
-      flex-grow: unset;
-    }
+        .navbar-menu {
+            flex-grow: unset;
+        }
 
-    .navbar-start,
-    .navbar-end {
-      margin-left: auto;
-    }
+        .navbar-start,
+        .navbar-end {
+            margin-left: auto;
+        }
 
-    .navbar-item {
-      padding-right: 0.75rem;
-    }
+        .navbar-item {
+            padding-right: 0.75rem;
+        }
 
-    /* CSS responsive cho nút login */
-    .navbar-item .button.is-primary {
-      margin-left: auto;
-      margin-right: 1rem;
-    }
+        /* CSS responsive cho nút login */
+        .navbar-item .button.is-primary {
+            margin-left: auto;
+            margin-right: 1rem;
+        }
 
-    /* CSS responsive cho menu dropdown */
-    .navbar-item.has-dropdown.is-hoverable {
-      margin-right: 1rem;
-    }
+        /* CSS responsive cho menu dropdown */
+        .navbar-item.has-dropdown.is-hoverable {
+            margin-right: 1rem;
+        }
 
-    /* CSS responsive cho dropdown */
-    .navbar-dropdown {
-      right: 0;
-      left: auto;
-    }
-    
+        /* CSS responsive cho dropdown */
+        .navbar-dropdown {
+            right: 0;
+            left: auto;
+        }
 
-    /* CSS responsive cho navbar menu */
-.navbar-menu {
-    display: flex;
-    flex-direction: column;
-    background-color: hsl(0, 0%, 96%);
-    padding: 1rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    z-index: 10;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-}
+        /* CSS responsive cho navbar menu */
+        .navbar-menu {
+            display: flex;
+            flex-direction: column;
+            background-color: hsl(0, 0%, 96%);
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            z-index: 10;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
 
-.navbar-menu.is-active {
-    transform: translateX(0);
-}
+        .navbar-menu.is-active {
+            transform: translateX(0);
+        }
 
-/* CSS responsive cho navbar-end */
-.navbar-end {
-    margin-left: auto;
-}
+        /* CSS responsive cho navbar-end */
+        .navbar-end {
+            margin-left: auto;
+        }
 
-/* CSS responsive cho navbar-item */
-.navbar-item {
-    padding: 0.5rem 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    border-bottom: 1px solid #dbdbdb;
-}
+        /* CSS responsive cho navbar-item */
+        .navbar-item {
+            padding: 0.5rem 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border-bottom: 1px solid #dbdbdb;
+        }
 
-.navbar-item .buttons {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-grow: 1;
-}
+        .navbar-item .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-grow: 1;
+        }
 
-.navbar-item .buttons a {
-    display: flex;
-    align-items: center;
-    color: rgb(239, 166, 39);
-}
+        .navbar-item .buttons a {
+            display: flex;
+            align-items: center;
+            color: rgb(239, 166, 39);
+        }
 
-/* CSS responsive cho navbar-link */
-.navbar-link {
-    color: inherit;
-}
+        /* CSS responsive cho navbar-link */
+        .navbar-link {
+            color: inherit;
+        }
 
-/* CSS responsive cho navbar-dropdown */
-.navbar-dropdown {
-    position: static;
-    display: none;
-    max-height: none;
-}
+        /* CSS responsive cho navbar-dropdown */
+        .navbar-dropdown {
+            position: static;
+            display: none;
+            max-height: none;
+        }
 
-.navbar-item.has-dropdown:hover .navbar-dropdown,
-.navbar-item.has-dropdown:focus .navbar-dropdown {
-    display: block;
-}
+        .navbar-item.has-dropdown:hover .navbar-dropdown,
+        .navbar-item.has-dropdown:focus .navbar-dropdown {
+            display: block;
+        }
 
-.navbar-item.has-dropdown .navbar-dropdown a.navbar-item {
-    padding-left: 1rem;
-}
+        .navbar-item.has-dropdown .navbar-dropdown a.navbar-item {
+            padding-left: 1rem;
+        }
 
-/* CSS responsive cho nút login */
-.navbar-item .button.is-primary {
-    display: none;
-}
+        /* CSS responsive cho nút login */
+        .navbar-item .button.is-primary {
+            display: none;
+        }
 
-@media screen and (max-width: 768px) {
-    /* CSS responsive cho navbar menu */
-    .navbar-menu {
-        transform: translateX(-100%);
-    }
+        @media screen and (max-width: 768px) {
+            /* CSS responsive cho navbar menu */
+            .navbar-menu {
+                transform: translateX(-100%);
+            }
 
-    .navbar-menu.is-active {
-        transform: translateX(0);
-    }
+            .navbar-menu.is-active {
+                transform: translateX(0);
+            }
 
-    /* CSS responsive cho navbar-end */
-    .navbar-end {
-        display: none;
-    }
+            /* CSS responsive cho navbar-end */
+            .navbar-end {
+                display: none;
+            }
 
-    /* CSS responsive cho nút login */
-    .navbar-item .button.is-primary {
-        display: flex;
-    }
-}
-
-  </style>
+            /* CSS responsive cho nút login */
+            .navbar-item .button.is-primary {
+                display: flex;
+            }
+        }
+    </style>
 </head>
 <!-- <nav class="navbar" style="background-color: hsl(0, 0%, 96%); position: fixed; top:0; width: 99vw;" role="navigation"
     aria-label="main navigation"> -->
@@ -280,6 +278,4 @@
     </div>
     <% } %>
 </div>
-
-
 </nav>
