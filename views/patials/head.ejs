@@ -14,7 +14,85 @@
         crossorigin="anonymous"></script>
         <title>VKBSTORE </title> 
         <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2292/2292038.png" type="image/x-icon">
-</head>
+
+        <style>
+            /* CSS responsive cho navbar-end */
+.navbar-end {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-item {
+  margin-right: 35px;
+}
+
+/* CSS responsive cho màn hình điện thoại */
+@media screen and (max-width: 767px) {
+  .navbar-end {
+    justify-content: flex-end;
+  }
+
+  .navbar-item {
+    margin-right: 0;
+  }
+}
+
+/* CSS responsive cho màn hình web */
+@media screen and (min-width: 768px) {
+  .navbar-end {
+    justify-content: flex-end;
+  }
+}
+
+/* CSS responsive cho navbar-link */
+.navbar-link {
+  color: inherit;
+}
+
+/* CSS responsive cho navbar-dropdown */
+.navbar-dropdown {
+  position: static;
+  display: none;
+  max-height: none;
+}
+
+.navbar-item.has-dropdown:hover .navbar-dropdown,
+.navbar-item.has-dropdown:focus .navbar-dropdown {
+  display: block;
+}
+
+.navbar-item.has-dropdown .navbar-dropdown a.navbar-item {
+  padding-left: 1rem;
+}
+
+/* CSS responsive cho nút login */
+.navbar-item .button.is-primary {
+  display: flex;
+}
+
+@media screen and (max-width: 1023px) {
+  /* CSS responsive cho navbar menu */
+  .navbar-menu {
+    transform: translateX(-100%);
+  }
+
+  .navbar-menu.is-active {
+    transform: translateX(0);
+  }
+
+  /* CSS responsive cho navbar-end */
+  .navbar-end {
+    display: flex;
+  }
+
+  /* CSS responsive cho nút login */
+  .navbar-item .button.is-primary {
+    display: flex;
+  }
+}
+
+        </style>
+    </head>
 <!-- <nav class="navbar" style="background-color: hsl(0, 0%, 96%); position: fixed; top:0; width: 99vw;" role="navigation"
     aria-label="main navigation"> -->
     <nav class="navbar" style="background-image: url('https://img.freepik.com/premium-photo/blue-sky-watercolor-effect-stains-paint-splatter-grunge-background-texture-soft-blue-pastel-website-banner-design_364465-1395.jpg');
