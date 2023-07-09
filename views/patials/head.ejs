@@ -236,8 +236,8 @@
                 class="dropdown-toggle nav-link dropdown-toggle"
                 data-toggle="dropdown"
                 aria-expanded="false"
-                href="#"
-                >Dropdown
+                href="/"
+                >Chức năng
               </a>
               <div class="dropdown-menu" role="menu">
                 <a class="dropdown-item" role="presentation" href="/users/dashboard"
@@ -269,21 +269,24 @@
           </form> -->
           <div class="navbar-end">
             <% if(isLogin.name !== undefined) { %>
+                <li class="dropdown">
             <div
               class="navbar-item has-dropdown is-hoverable"
               style="margin-right: 35px">
-              <a class="navbar-link">
+              <!-- <a class="navbar-link">
                 <i class="fa-solid fa-user" style="margin-right: 5px"></i>
                 <%= isLogin.name %>
-              </a>
+              </a> -->
               
-              <li class="dropdown">
+              
                 <a
                   class="dropdown-toggle nav-link dropdown-toggle"
                   data-toggle="dropdown"
                   aria-expanded="false"
                   href="#"
-                  >Dropdown
+                  >
+                  <i class="fa-solid fa-user" style="margin-right: 5px"></i>
+                  <%= isLogin.name %>
                 </a>
                 <div class="dropdown-menu">
 
