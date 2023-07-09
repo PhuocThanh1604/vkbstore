@@ -80,12 +80,24 @@
             </div>
             <div class="field is-horizontal">
                 <div class="field-label is-normal">
+                    <label class="label">Gía</label>
+                </div>
+                <div class="field-body">
+                    <div class="field is-narrow">
+                        <div class="control">
+                            <input class="input is-info" name="price" required min="0" type="number" value="<%= player.goals %>">
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
                     <label class="label">Số lượng</label>
                 </div>
                 <div class="field-body">
                     <div class="field is-narrow">
                         <div class="control">
-                            <input class="input is-info" name="goals" required min="0" type="number" value="<%= player.goals %>">
+                            <input class="input is-info" name="amount" required min="0" type="number" value="<%= player.goals %>">
                         </div>                    
                     </div>
                 </div>

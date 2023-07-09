@@ -9,6 +9,7 @@ const playerSchema = new Schema(
     desc: { type: String },
     position: { type: String, required: true },
     price: { type: Number, required: true, default: 0 },
+    amount: { type: Number, required: true, default: 0 },
     nation: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "nations",

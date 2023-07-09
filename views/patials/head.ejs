@@ -2,139 +2,187 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Các thư viện CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Các thư viện JavaScript -->
     <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script type="text/javascript" charset="utf8"
-        src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
     <script src="https://kit.fontawesome.com/589ebc73ef.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/js/bulma.min.js"
-        integrity="sha512-XSL8md+KzAg/ysd1EBcvzQx+8keNkzJ1pogDe+bJN9P5/RW+5c5v5d6Am++F6fmnt8wpD22fCaC/MP1M48hRtg=="
-        crossorigin="anonymous"></script>
-        <title>VKBSTORE </title> 
-        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2292/2292038.png" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/js/bulma.min.js" integrity="sha512-XSL8md+KzAg/ysd1EBcvzQx+8keNkzJ1pogDe+bJN9P5/RW+5c5v5d6Am++F6fmnt8wpD22fCaC/MP1M48hRtg==" crossorigin="anonymous"></script>
+    <title>VKBSTORE</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2292/2292038.png" type="image/x-icon">
+
+  <style>
+    /* CSS responsive cho navbar */
+    .navbar {
+      background-image: url('https://img.freepik.com/premium-photo/blue-sky-watercolor-effect-stains-paint-splatter-grunge-background-texture-soft-blue-pastel-website-banner-design_364465-1395.jpg');
+      height: 10vh;
+    }
+
+    .navbar-brand {
+      margin-right: auto;
+    }
+
+    .navbar-menu {
+      flex-grow: unset;
+    }
+
+    .navbar-start,
+    .navbar-end {
+      margin-left: auto;
+    }
+
+    .navbar-item {
+      padding-right: 0.75rem;
+    }
+
+    /* CSS responsive cho nút login */
+    .navbar-item .button.is-primary {
+      margin-left: auto;
+      margin-right: 1rem;
+    }
+
+    /* CSS responsive cho menu dropdown */
+    .navbar-item.has-dropdown.is-hoverable {
+      margin-right: 1rem;
+    }
+
+    /* CSS responsive cho dropdown */
+    .navbar-dropdown {
+      right: 0;
+      left: auto;
+    }
+  </style>
 </head>
 <!-- <nav class="navbar" style="background-color: hsl(0, 0%, 96%); position: fixed; top:0; width: 99vw;" role="navigation"
     aria-label="main navigation"> -->
-    <nav class="navbar" style="background-image: url('https://img.freepik.com/premium-photo/blue-sky-watercolor-effect-stains-paint-splatter-grunge-background-texture-soft-blue-pastel-website-banner-design_364465-1395.jpg');
-    height: 10vh" role="navigation"
-        aria-label="main navigation">
-    <div class="navbar-brand">
-        <a class="navbar-item " href="/">
-            <img src="https://clipart-library.com/images/8i6oojBXT.png" width="100" height="152">
-        </a>
-      </div>
+<nav
+  class="navbar"
+  style="
+    background-image: url('https://img.freepik.com/premium-photo/blue-sky-watercolor-effect-stains-paint-splatter-grunge-background-texture-soft-blue-pastel-website-banner-design_364465-1395.jpg');
+    height: 10vh;
+  "
+  role="navigation"
+  aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img
+        src="https://clipart-library.com/images/8i6oojBXT.png"
+        width="100"
+        height="152" />
+    </a>
+  </div>
 
-    <div id="navbarBasicExample" class="navbar-menu">
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
         <div class="navbar-start">
-            <div class="navbar-start">
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                        <div class="buttons">
-                            <a class="btn btn-group-sm" href="/" style="color: rgb(239, 166, 39);">
-                                <strong>
-                                    <i class="fa-solid fa-house" style="margin-right: 5px;"></i>
-                   Trang Chủ
-                                </strong>
-                            </a>
-                        </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="btn btn-group-sm" href="/" style="color: rgb(239, 166, 39)">
+                            <strong>
+                                <i class="fa-solid fa-house" style="margin-right: 5px"></i>
+                                Trang Chủ
+                            </strong>
+                        </a>
                     </div>
-                </div> 
-            <% if(isLogin.name !== undefined) { %>
-                <% if(isLogin.role === "admin") { %>
-                    <div class="navbar-end">
-                        <div class="navbar-item">
-                            <div class="buttons">
-                                <a class="btn btn-group-sm" href="/users/dashboard"  style="color: rgb(239, 166, 39);">
-                                    <strong>
-                                        <i class="fa-solid fa-house" style="margin-right: 5px;"></i>
-                                        Dashboard
-                                    </strong>
-                                </a>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="navbar-end">
-                        <div class="navbar-item">
-                            <div class="buttons">
-                                <a class="btn btn-group-sm" href="/players"  style="color: rgb(239, 166, 39);">
-                                    <strong>
-                                        <i class="fa-sharp fa-solid fa-futbol" style="margin-right: 5px;"></i>
-                                        Sản Phẩm
-                                    </strong>
-                                </a>
-                            </div>
-                        </div>
-                    </div> 
-           
-                    <div class="navbar-end">
-                        <div class="navbar-item">
-                            <div class="buttons">
-                                <a class="btn btn-group-sm" href="/nations"  style="color: rgb(239, 166, 39);">
-                                    <strong>
-                                        <i class="fa-sharp fa-solid fa-earth-asia" style="margin-right: 5px;"></i>
-                                       Loại 
-                                    </strong>
-                                </a>
-                            </div>
-                        </div>
-                    </div> 
+                </div>
+            </div>
+            <% if(isLogin.name !== undefined) { %> <% if(isLogin.role === "admin") {
+            %>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="btn btn-group-sm" href="/users/dashboard" style="color: rgb(239, 166, 39)">
+                            <strong>
+                                <i class="fa-solid fa-house" style="margin-right: 5px"></i>
+                                Dashboard
+                            </strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="btn btn-group-sm" href="/players" style="color: rgb(239, 166, 39)">
+                            <strong>
+                                <i class="fa-sharp fa-solid fa-futbol" style="margin-right: 5px"></i>
+                                Sản Phẩm
+                            </strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                    <div class="navbar-end">
-                        <div class="navbar-item">
-                            <div class="buttons">
-                                <a class="btn btn-group-sm" href="/accounts" style="color: rgb(239, 166, 39);">
-                                    <strong>
-                                        <i class="fa-sharp fa-solid fa-users" style="margin-right: 5px;"></i>
-                                       
-                                        Users
-                                    </strong>
-                                </a>
-                            </div>
-                        </div>
-                    </div> 
-          
-         
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="btn btn-group-sm" href="/nations" style="color: rgb(239, 166, 39)">
+                            <strong>
+                                <i class="fa-sharp fa-solid fa-earth-asia" style="margin-right: 5px"></i>
+                                Loại
+                            </strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="btn btn-group-sm" href="/accounts" style="color: rgb(239, 166, 39)">
+                            <strong>
+                                <i class="fa-sharp fa-solid fa-users" style="margin-right: 5px"></i>
+                                Users
+                            </strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <% }} %>
         </div>
-        
     </div>
-    
-    
-        <div class="navbar-end">
-            <% if(isLogin.name !== undefined) { %>
-            <div class="navbar-item has-dropdown is-hoverable" style="margin-right: 35px;">
-                <a class="navbar-link">
-                    <i class="fa-solid fa-user" style="margin-right: 5px;"></i>
-                   <%= isLogin.name %>
-                </a>
-        
-                <div class="navbar-dropdown">
-                  <a class="navbar-item" href="/users/edit">
-                    <i class="fa-sharp fa-regular fa-address-card" style="margin-right: 5px;"></i>
+
+    <div class="navbar-end">
+        <% if(isLogin.name !== undefined) { %>
+        <div class="navbar-item has-dropdown is-hoverable" style="margin-right: 35px">
+            <a class="navbar-link">
+                <i class="fa-solid fa-user" style="margin-right: 5px"></i>
+                <%= isLogin.name %>
+            </a>
+
+            <div class="navbar-dropdown">
+                <a class="navbar-item" href="/users/edit">
+                    <i class="fa-sharp fa-regular fa-address-card" style="margin-right: 5px"></i>
                     Profile
-                  </a>
-                  <a class="navbar-item" href="/users/change-password">
-                    <i class="fa-solid fa-key" style="margin-right: 5px;"></i>
+                </a>
+                <a class="navbar-item" href="/users/change-password">
+                    <i class="fa-solid fa-key" style="margin-right: 5px"></i>
                     Change password
-                  </a>
-                  <a class="navbar-item" href="/users/logout">
-                    <i class="fa-solid fa-arrow-right-from-bracket" style="margin-right: 5px;"></i>
+                </a>
+                <a class="navbar-item" href="/users/logout">
+                    <i class="fa-solid fa-arrow-right-from-bracket" style="margin-right: 5px"></i>
                     Logout
-                  </a>
-                </div>
-              </div>
-              <% } %>
-              <% if(isLogin.name === undefined) { %>
-            <div class="navbar-item">
-                <div class="buttons">
-                    <a class="button is-primary" href="/users/login">
-                        <strong> <i class="fa-solid fa-right-to-bracket" style="margin-right: 5px;"></i>Log in</strong>
-                    </a>
-                </div>
+                </a>
             </div>
         </div>
-        <% } %>
+        <% } %> <% if(isLogin.name === undefined) { %>
+        <div class="navbar-item">
+            <div class="buttons">
+                <a class="button is-primary" href="/users/login">
+                    <strong>
+                        <i class="fa-solid fa-right-to-bracket" style="margin-right: 5px"></i
+                        >Log in</strong
+                    >
+                </a>
             </div>
+        </div>
+    </div>
+    <% } %>
+</div>
+
 </nav>
