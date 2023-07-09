@@ -39,12 +39,10 @@
     .navbar-end {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
     }
 
     .navbar-item {
       margin-right: 35px;
-      padding-right: 0.75rem;
     }
 
     .navbar-item .button.is-primary {
@@ -57,71 +55,86 @@
       }
     }
 
+    @media screen and (max-width: 768px) {
+      .navbar-end {
+        justify-content: flex-end;
+      }
+
+      .navbar-item {
+        margin-right: 0;
+      }
+    }
+
     /* CSS responsive cho navbar */
-    .navbar {
-      background-image: url('https://img.freepik.com/premium-photo/blue-sky-watercolor-effect-stains-paint-splatter-grunge-background-texture-soft-blue-pastel-website-banner-design_364465-1395.jpg');
-      height: 10vh;
-    }
+.navbar {
+    background-image: url('https://img.freepik.com/premium-photo/blue-sky-watercolor-effect-stains-paint-splatter-grunge-background-texture-soft-blue-pastel-website-banner-design_364465-1395.jpg');
+    height: 10vh;
+}
 
-    .navbar-brand {
-      margin-right: auto;
-    }
+.navbar-brand {
+    margin-right: auto;
+}
 
+.navbar-menu {
+    flex-grow: unset;
+}
+
+.navbar-start,
+.navbar-end {
+    margin-left: auto;
+}
+
+.navbar-item {
+    padding-right: 0.75rem;
+}
+
+/* CSS responsive cho navbar-link */
+.navbar-link {
+    color: inherit;
+}
+
+/* CSS responsive cho navbar-dropdown */
+.navbar-dropdown {
+    position: static;
+    display: none;
+    max-height: none;
+}
+
+.navbar-item.has-dropdown:hover .navbar-dropdown,
+.navbar-item.has-dropdown:focus .navbar-dropdown {
+    display: block;
+}
+
+.navbar-item.has-dropdown .navbar-dropdown a.navbar-item {
+    padding-left: 1rem;
+}
+
+/* CSS responsive cho nút login */
+.navbar-item .button.is-primary {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    /* CSS responsive cho navbar menu */
     .navbar-menu {
-      flex-grow: unset;
+        transform: translateX(-100%);
     }
 
-    .navbar-start,
+    .navbar-menu.is-active {
+        transform: translateX(0);
+    }
+
+    /* CSS responsive cho navbar-end */
     .navbar-end {
-      margin-left: auto;
-    }
-
-    /* CSS responsive cho navbar-link */
-    .navbar-link {
-      color: inherit;
-    }
-
-    /* CSS responsive cho navbar-dropdown */
-    .navbar-dropdown {
-      position: static;
-      display: none;
-      max-height: none;
-    }
-
-    .navbar-item.has-dropdown:hover .navbar-dropdown,
-    .navbar-item.has-dropdown:focus .navbar-dropdown {
-      display: block;
-    }
-
-    .navbar-item.has-dropdown .navbar-dropdown a.navbar-item {
-      padding-left: 1rem;
+        display: none;
     }
 
     /* CSS responsive cho nút login */
     .navbar-item .button.is-primary {
-      display: none;
-    }
-
-    @media screen and (max-width: 768px) {
-      /* CSS responsive cho navbar menu */
-      .navbar-menu {
-        transform: translateX(-100%);
-      }
-
-      .navbar-menu.is-active {
-        transform: translateX(0);
-      }
-
-      /* CSS responsive cho navbar-end */
-      .navbar-end {
-        display: none;
-      }
-
-      /* CSS responsive cho nút login */
-      .navbar-item .button.is-primary {
         display: flex;
-      }
     }
+}
+
   </style>
 </head>
 <!-- <nav class="navbar" style="background-color: hsl(0, 0%, 96%); position: fixed; top:0; width: 99vw;" role="navigation"
