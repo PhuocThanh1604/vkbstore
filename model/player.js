@@ -1,4 +1,3 @@
-// File playerSchema
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", true);
 const Schema = mongoose.Schema;
@@ -20,6 +19,6 @@ const playerSchema = new Schema(
   { timestamps: true }
 );
 
-var players = mongoose.model("players", playerSchema);
+const Players = mongoose.model("Players", playerSchema);
 
-module.exports = players;
+module.exports = Players;
