@@ -127,7 +127,11 @@
         .navbar-item .button.is-primary {
             display: none;
         }
-
+        @media screen and (max-width: 1023px) {
+    .navbar-item .button.is-primary {
+        display: flex;
+    }
+}
         @media screen and (max-width: 768px) {
             /* CSS responsive cho navbar menu */
             .navbar-menu {
