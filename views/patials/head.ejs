@@ -183,6 +183,141 @@
             </div>
           </div>
         </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a
+                class="btn btn-group-sm"
+                href="/nations"
+                style="color: rgb(239, 166, 39)">
+                <strong>
+                  <i
+                    class="fa-sharp fa-solid fa-earth-asia"
+                    style="margin-right: 5px"></i>
+                  Loại
+                </strong>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a
+                class="btn btn-group-sm"
+                href="/accounts"
+                style="color: rgb(239, 166, 39)">
+                <strong>
+                  <i
+                    class="fa-sharp fa-solid fa-users"
+                    style="margin-right: 5px"></i>
+                  Users
+                </strong>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <% }} %>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <% if(isLogin.name !== undefined) { %>
+      <div
+        class="navbar-item has-dropdown is-hoverable"
+        style="margin-right: 35px">
+        <a class="navbar-link">
+          <i class="fa-solid fa-user" style="margin-right: 5px"></i>
+          <%= isLogin.name %>
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="/users/edit">
+            <i
+              class="fa-sharp fa-regular fa-address-card"
+              style="margin-right: 5px"></i>
+            Profile
+          </a>
+          <a class="navbar-item" href="/users/change-password">
+            <i class="fa-solid fa-key" style="margin-right: 5px"></i>
+            Change password
+          </a>
+          <a class="navbar-item" href="/users/logout">
+            <i
+              class="fa-solid fa-arrow-right-from-bracket"
+              style="margin-right: 5px"></i>
+            Logout
+          </a>
+        </div>
+      </div>
+      <% } %> <% if(isLogin.name === undefined) { %>
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary" href="/users/login">
+            <strong>
+              <i
+                class="fa-solid fa-right-to-bracket"
+                style="margin-right: 5px"></i
+              >Log in</strong
+            >
+          </a>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+
+  <aside id="sidebar" class="is-hidden-mobile">
+    <div class="navbar-start">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a
+              class="btn btn-group-sm"
+              href="/"
+              style="color: rgb(239, 166, 39)">
+              <strong>
+                <i class="fa-solid fa-house" style="margin-right: 5px"></i>
+                Trang Chủ
+              </strong>
+            </a>
+          </div>
+        </div>
+        <% if(isLogin.name !== undefined) { %> <% if(isLogin.role === "admin") {
+        %>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a
+                class="btn btn-group-sm"
+                href="/users/dashboard"
+                style="color: rgb(239, 166, 39)">
+                <strong>
+                  <i class="fa-solid fa-house" style="margin-right: 5px"></i>
+                  Dashboard
+                </strong>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a
+                class="btn btn-group-sm"
+                href="/players"
+                style="color: rgb(239, 166, 39)">
+                <strong>
+                  <i
+                    class="fa-sharp fa-solid fa-futbol"
+                    style="margin-right: 5px"></i>
+                  Sản Phẩm
+                </strong>
+              </a>
+            </div>
+          </div>
+        </div>
 
         <div class="navbar-end">
           <div class="navbar-item">
@@ -267,181 +402,21 @@
           </a>
         </div>
       </div>
+      <% } %>
     </div>
-    <% } %>
-  </div>
-
-
-  <aside id="sidebar" class="is-hidden-mobile">
-    <div class="navbar-start">
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a
-              class="btn btn-group-sm"
-              href="/"
-              style="color: rgb(239, 166, 39)"
-            >
-              <strong>
-                <i class="fa-solid fa-house" style="margin-right: 5px"></i>
-                Trang Chủ
-              </strong>
-            </a>
-          </div>
-        </div>
-        <% if(isLogin.name !== undefined) { %> <% if(isLogin.role === "admin") {
-        %>
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a
-                class="btn btn-group-sm"
-                href="/users/dashboard"
-                style="color: rgb(239, 166, 39)"
-              >
-                <strong>
-                  <i class="fa-solid fa-house" style="margin-right: 5px"></i>
-                  Dashboard
-                </strong>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a
-                class="btn btn-group-sm"
-                href="/players"
-                style="color: rgb(239, 166, 39)"
-              >
-                <strong>
-                  <i
-                    class="fa-sharp fa-solid fa-futbol"
-                    style="margin-right: 5px"
-                  ></i>
-                  Sản Phẩm
-                </strong>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a
-                class="btn btn-group-sm"
-                href="/nations"
-                style="color: rgb(239, 166, 39)"
-              >
-                <strong>
-                  <i
-                    class="fa-sharp fa-solid fa-earth-asia"
-                    style="margin-right: 5px"
-                  ></i>
-                  Loại
-                </strong>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a
-                class="btn btn-group-sm"
-                href="/accounts"
-                style="color: rgb(239, 166, 39)"
-              >
-                <strong>
-                  <i
-                    class="fa-sharp fa-solid fa-users"
-                    style="margin-right: 5px"
-                  ></i>
-
-                  Users
-                </strong>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <% }} %>
-      </div>
-    </div>
-
-    <div class="navbar-end">
-      <% if(isLogin.name !== undefined) { %>
-      <div
-        class="navbar-item has-dropdown is-hoverable"
-        style="margin-right: 35px"
-      >
-        <a class="navbar-link">
-          <i class="fa-solid fa-user" style="margin-right: 5px"></i>
-          <%= isLogin.name %>
-        </a>
-
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="/users/edit">
-            <i
-              class="fa-sharp fa-regular fa-address-card"
-              style="margin-right: 5px"
-            ></i>
-            Profile
-          </a>
-          <a class="navbar-item" href="/users/change-password">
-            <i class="fa-solid fa-key" style="margin-right: 5px"></i>
-            Change password
-          </a>
-          <a class="navbar-item" href="/users/logout">
-            <i
-              class="fa-solid fa-arrow-right-from-bracket"
-              style="margin-right: 5px"
-            ></i>
-            Logout
-          </a>
-        </div>
-      </div>
-      <% } %> <% if(isLogin.name === undefined) { %>
-      <div class="navbar-item">
-        <div class="buttons">
-          <a class="button is-primary" href="/users/login">
-            <strong>
-              <i
-                class="fa-solid fa-right-to-bracket"
-                style="margin-right: 5px"
-              ></i
-            >Log in</strong
-          >
-        </a>
-      </div>
-    </div>
-    <% } %>
-  </div>
-</aside>
+  </aside>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Lắng nghe sự kiện click vào nút điều hướng
-      var navbarBurger = document.querySelector(".navbar-burger");
-      var navbarMenu = document.querySelector(".navbar-menu");
-      var sidebar = document.querySelector("#sidebar");
+    document.addEventListener('DOMContentLoaded', function () {
+      var navbarBurger = document.querySelector('.navbar-burger');
+      var navbarMenu = document.querySelector('.navbar-menu');
+      var sidebar = document.querySelector('#sidebar');
 
-      navbarBurger.addEventListener("click", function () {
-        // Toggle class "is-active" cho nút điều hướng
-        navbarBurger.classList.toggle("is-active");
-
-        // Toggle class "is-active" cho navbar menu
-        navbarMenu.classList.toggle("is-active");
-
-        // Toggle class "is-active" cho sidebar
-        sidebar.classList.toggle("is-active");
+      navbarBurger.addEventListener('click', function () {
+        navbarBurger.classList.toggle('is-active');
+        navbarMenu.classList.toggle('is-active');
+        sidebar.classList.toggle('is-active');
       });
     });
   </script>
-
 </nav>
-
-
