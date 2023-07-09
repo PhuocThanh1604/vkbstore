@@ -407,16 +407,28 @@
   </aside>
 
   <script>
+    function isMobileDevice() {
+      return (
+        typeof window.orientation !== 'undefined' ||
+        navigator.userAgent.indexOf('IEMobile') !== -1
+      );
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
       var navbarBurger = document.querySelector('.navbar-burger');
       var navbarMenu = document.querySelector('.navbar-menu');
       var sidebar = document.querySelector('#sidebar');
 
-      navbarBurger.addEventListener('click', function () {
-        navbarBurger.classList.toggle('is-active');
-        navbarMenu.classList.toggle('is-active');
-        sidebar.classList.toggle('is-active');
-      });
+      if (isMobileDevice()) {
+        navbarBurger.addEventListener('click', function () {
+          navbarBurger.classList.toggle('is-active');
+          navbarMenu.classList.toggle('is-active');
+          sidebar.classList.toggle('is-active');
+        });
+      } else {
+        sidebar.classList.remove('is-hidden-mobile');
+        navbarBurger.style.display = 'none';
+      }
     });
   </script>
 </nav>
