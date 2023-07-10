@@ -332,7 +332,7 @@ class PlayerController {
       const player = new Players(data);
       const playerCheck = await Players.find({ name: player.name });
       if (playerCheck.length > 0) {
-        req.flash('error_msg', 'DuplicateTên cầu thủ!');
+        req.flash('error_msg', 'Sản phẩm đã có');
         return res.redirect('/players');
       }
   

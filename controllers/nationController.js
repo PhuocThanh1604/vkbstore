@@ -53,7 +53,7 @@ class NationController {
       })
       .catch((err) => {
         console.log("error update: ", err);
-        req.flash("error_msg", "Duplicate nation name!");
+        req.flash("error_msg", "Loại sản phẩm đã có ");
         res.redirect(`/nations/edit/${req.params.nationId}`);
       });
   }

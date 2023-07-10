@@ -43,12 +43,8 @@
             onclick="document.querySelector('#popup').classList.remove('is-active')"></button>
         </header>
         <section class="modal-card-body">
-          <% if (successMessage) { %>
-            <div class="notification is-success">
-              <%= successMessage %>
-            </div>
-          <% } %>
-          <form method="post" action="/players" enctype="multipart/form-data">
+    
+          <form  method="post" action="/players" enctype="multipart/form-data">
             <div class="field is-horizontal">
               <div class="field-label is-normal">
                 <label class="label">Tên sản phẩm</label>
@@ -729,7 +725,16 @@ document.addEventListener('DOMContentLoaded', function() {
       'wrapAround': true
     });
   });
+  window.onload = function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('success')) {
+      showAlert();
+    }
+  }
 
+  function showAlert() {
+    alert("Sản phẩm đã được tạo thành công!");
+  }
 
   </script>
   
