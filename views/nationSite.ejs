@@ -27,6 +27,11 @@
                                 onclick="document.querySelector('#popup2').classList.remove('is-active')"></button>
                         </header>
                         <section class="modal-card-body">
+                            <% if (successMessage) { %>
+                                <div class="notification is-success">
+                                  <%= successMessage %>
+                                </div>
+                              <% } %>
                             <form method="post" action="/nations">
                                 <div class="field is-horizontal">
                                     <div class="field-label is-normal">
