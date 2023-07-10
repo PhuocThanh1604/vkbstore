@@ -30,15 +30,25 @@
     integrity="sha512-XSL8md+KzAg/ysd1EBcvzQx+8keNkzJ1pogDe+bJN9P5/RW+5c5v5d6Am++F6fmnt8wpD22fCaC/MP1M48hRtg=="
     crossorigin="anonymous"></script>
   <title>VKBSTORE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
   <link
     rel="icon"
     href="https://cdn-icons-png.flaticon.com/512/2292/2292038.png"
     type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="styles.css">
+<!-- CSS của Slick Carousel -->
+<link rel="stylesheet" type="text/css" href="path/to/slick.css"/>
+
+<!-- CSS theme của Slick Carousel (nếu cần) -->
+<link rel="stylesheet" type="text/css" href="path/to/slick-theme.css"/>
+
+<!-- JavaScript của Slick Carousel -->
+<script src="path/to/slick.min.js"></script>
 
   <style>
     .header-dark {
       background: url('https://cdn.pixabay.com/photo/2015/10/12/14/59/milky-way-984050_960_720.jpg')
-        #444;
+        #319441;
       background-size: cover;
       padding-bottom: 80px;
     }
@@ -115,12 +125,12 @@
     }
 
     .header-dark .navbar.navbar-dark .navbar-nav .nav-link {
-      color: #d9d9d9;
+      color: #454739;
     }
 
     .header-dark .navbar.navbar-dark .navbar-nav .nav-link:focus,
     .header-dark .navbar.navbar-dark .navbar-nav .nav-link:hover {
-      color: #fcfeff !important;
+      color: #3eb5f1 !important;
       background-color: transparent;
     }
 
@@ -128,19 +138,21 @@
       margin-top: -5px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       background-color: #fff;
-      border-radius: 2px;
+      border-radius: 20px;
     }
 
     .header-dark .navbar .dropdown-menu .dropdown-item:focus,
     .header-dark .navbar .dropdown-menu .dropdown-item {
       line-height: 2;
       font-size: 14px;
-      color: #37434d;
+      color: #454739;
+     
     }
 
     .header-dark .navbar .dropdown-menu .dropdown-item:focus,
     .header-dark .navbar .dropdown-menu .drodown-item:hover {
-      background: #ebeff1;
+      background: #283439;
+     border-radius: 20px;
     }
 
     .header-dark .navbar .action-button,
@@ -212,35 +224,455 @@
     .header-small {
   height: 30px; /* Điều chỉnh chiều cao mong muốn */
 }
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+.card {
+  width: 30vw;
+  margin: 20px;
+
+}
+/* CSS cho chế độ mobile */
+@media (max-width: 767px) {
+
+  .card-container {
+    display: flex;
+     flex-wrap: wrap; 
+     justify-content: center;
+    flex-direction: column; 
+  justify-content: center;
+
+ 
+}
+.card-content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
+.content{
+  display: none;
+}
+.column{
+  width: 90vw;
+   margin-bottom: 20px;
+   margin-top: 10px;
+}
+}
+/* CSS mặc định cho bảng */
+#mytable {
+  width: 1000px;
+}
+
+/* CSS responsive cho kích thước màn hình nhỏ hơn hoặc bằng 768px */
+@media screen and (max-width: 768px) {
+  #mytable {
+    width: 100%;
+  }
+  
+  #mytable th,
+  #mytable td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+    #search-form {
+      margin-left: 200px;
+      margin-right: 200px;
+    }
+  }
+
+  /* CSS cho màn hình nhỏ hơn hoặc bằng 600px */
+  @media screen and (max-width: 600px) {
+    #search-form {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+  /* Điều chỉnh giao diện khi độ rộng màn hình nhỏ hơn hoặc bằng 768px */
+  .box {
+    right: -100px;
+  }
+
+.custom-box .field-label {
+    display: none;
+  }
+}
+
+
+
+/* CSS responsive khi độ rộng màn hình nhỏ hơn hoặc bằng 768px */
+@media screen and (max-width: 768px) {
+  .responsive-button.button-create {
+    margin-bottom: 10px;
+    left: 20px;
+    margin-top: -50px;
+  }
+}
+
+/* CSS responsive cho .responsive-button khi độ rộng màn hình nhỏ hơn hoặc bằng 480px */
+@media screen and (max-width: 480px) {
+  .responsive-button.button-create {
+    margin-bottom: 10px;
+    left: 10px;
+    margin-top: -50px;
+  }
+}
+/* CSS responsive khi độ rộng màn hình nhỏ hơn hoặc bằng 768px */
+@media screen and (max-width: 768px) {
+  .responsive-button-category.button-create-category {
+    margin-bottom: 20px;
+    left: 20px;
+    margin-top: 30px;
+  }
+}
+
+/* CSS responsive cho .responsive-button khi độ rộng màn hình nhỏ hơn hoặc bằng 480px */
+@media screen and (max-width: 480px) {
+  .responsive-button-category.button-create-category {
+    margin-bottom: 20px;
+    left: 10px;
+    margin-top: 30px;
+  }
+}
+.carousel-inner{
+  background-color: black;
+  color: black;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: white;
+  color: white;
+}
+/* CSS responsive cho màn hình nhỏ hơn hoặc bằng 768px */
+@media screen and (max-width: 768px) {
+
+  
+  h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+   
+  }
+  
+  form.container {
+    margin-top: 5px;
+  }
+  
+  .field-label.is-normal {
+    padding-bottom: 5px;
+  }
+  
+  .field.is-horizontal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .field.is-horizontal .field-label.is-normal,
+  .field.is-horizontal .field-body {
+    width: 100%;
+  }
+  
+  .field.is-horizontal .field-body .field.is-narrow {
+    margin-bottom: 10px;
+  }
+  
+  .field.is-horizontal .field-body .control {
+    width: 100%;
+  }
+  
+  .field.is-horizontal .field-body .select.is-fullwidth {
+    width: 100%;
+  }
+  
+  .field.is-horizontal .field-body .select.is-fullwidth select {
+    width: 100%;
+  }
+  
+  .field.is-horizontal .field-body .textarea {
+    width: 100%;
+  }
+  
+  .field.is-horizontal .field-body .checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .field.is-horizontal .field-body .checkbox input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .field.is-horizontal .field-body .button.is-primary {
+    margin-left: 0;
+  }
+}
+
+/* CSS responsive cho màn hình nhỏ hơn hoặc bằng 480px */
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 25px;
+    margin-bottom: 5px;
+  }
+  
+  .field.is-horizontal .field-body .field.is-narrow {
+    margin-bottom: 5px;
+  }
+  .status{
+    margin-top: -42px;
+    color: white;
+  }
+}
+
+.container-nav{
+  background-color: #f2f2f2; 
+  border-radius: 15px;
+  border: 2px solid red;
+  color: black;
+
+}
+.container-nav-home{
+  background-color: #f2f2f2; 
+  border-radius: 15px;
+  border: 2px solid red;
+  color: black;
+  margin-right: 5px;
+}
+.container-nav-user {
+  background-color: #f2f2f2; 
+  border-radius: 15px;
+  border: 2px solid red;
+  color: black;
+}
+@media screen and (max-width: 480px) {
+  .container-nav{
+  background-color: #f2f2f2; 
+  border-radius: 15px;
+  border: 2px solid red;
+  color: black;
+}
+.container-nav-home{
+  background-color: #f2f2f2; 
+  border-radius: 15px;
+  border: 2px solid red;
+  color: black;
+}
+}
+@media screen and (max-width: 768px) {
+  .container-nav{
+    background-color: #f2f2f2;
+    margin-top: 10px;
+    width: 100px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    border: 2px solid red;
+    color: black;
+}
+.container-nav-home{
+  background-color: #f2f2f2;
+    margin-top: 10px;
+    width: 100px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+    color: black;
+}
+.container-nav-user{
+  background-color: #f2f2f2;
+    margin-top: 10px;
+    width: 100px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+    color: black;
+}
+}
+.carousel-inner .carousel-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+
+@media screen and (max-width: 768px) {
+  .carousel-inner-list .carousel-item img {
+  width: 150px; /* Kích thước chiều rộng mong muốn */
+  height: 100px; /* Kích thước chiều cao mong muốn */
+/* Giữ tỷ lệ khung hình và cắt bớt để lấp đầy khung */
+}
+}
+@media screen and (max-width: 768px) {
+  .carousel-inner .carousel-item img {
+  width: 500px; /* Kích thước chiều rộng mong muốn */
+  height: 500px; /* Kích thước chiều cao mong muốn */
+  object-fit: none; /* Giữ tỷ lệ khung hình và cắt bớt để lấp đầy khung */
+}
+}
+.box-info-text {
+  height: 60px;
+  width: 10vh;
+  border-radius: 16px;
+  text-align: center;
+  color: white;
+  background-color: blueviolet;
+}
+
+
+.card-content-detail{border: 2px solid black;
+
+color: #020af8;}
+
+.carousel-container {
+  width: 500px; /* Kích thước chiều rộng mong muốn */
+  height: 500px; /* Kích thước chiều cao mong muốn */
+  /* Các thuộc tính CSS khác cho div */
+}
+@media screen and (max-width: 768px) {
+  .box-info-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  margin-top: 100px;
+}
+
+  .card-content-detail {
+    display: flex; /* Use flexbox to arrange content vertically */
+    flex-direction: column; /* Arrange content in a column */
+    padding: 10px; /* Adjust the spacing between elements on mobile devices */
+    line-height: 30px; /* Adjust the line height of the content on mobile devices */
+    color: #454739;
+  }
+  
+  .card-content {
+    color: #283439;
+  }
+
+  .carousel-container {
+  width: 360px; /* Kích thước chiều rộng mong muốn */
+  height: 360px; /* Kích thước chiều cao mong muốn */
+  /* Các thuộc tính CSS khác cho div */
+  margin-bottom: 50px;
+}
+}
+.box-info-text {
+  width: 200px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column-detail{margin-left: 20px;font-size: larger;}
+
+.image-container-index {
+  width: 100%; /* Set the width to 100% to match the card width */
+  height: 300px; /* Set the desired height */
+}
+
+.image-container-index img {
+  width: 100%;
+  height:300px;
+  object-fit: cover;
+}
+
+.card-index{margin-left: 10px;
+margin-right: 10px; border: 1px solid black;}
+
+@media screen and (max-width: 768px) {
+  .columns.is-multiline {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .column.is-one-quarter {
+    width: 100%;
+    max-width: 500px; /* Set the maximum width to 500px */
+    margin-bottom: 20px; /* Add some bottom margin for spacing */
+  }
+
+  .card-index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-container-index {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%; /* Maintain a square aspect ratio */
+    position: relative;
+  }
+
+  .image-container-index img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-content-index {
+    flex-grow: 1; /* Allow the content to grow vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+  }
+}
+.card-container-index{
+  border: 1px solid black;
+}
 
   </style>
 </head>
 
-
   <div class="header-dark header-small">
     <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
       <div class="container">
-        <a class="navbar-brand" href="/">VKBSTORE</a
-        ><button
+        <a class="navbar-brand "style="color: yellow;" href="/">VKBSTORE</a
+        >
+        <button
           class="navbar-toggler"
           data-toggle="collapse"
           data-target="#navcol-1">
           <span class="sr-only">Toggle navigation</span
-          ><span class="navbar-toggler-icon"></span>
+          ><span class="navbar-toggler-icon" ></span>
         </button>
-        <div class="collapse navbar-collapse" id="navcol-1">
+        <div class="collapse navbar-collapse" id="navcol-1" >
+        
           <ul class="nav navbar-nav">
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" href="/">Trang chủ</a>
-            </li>
-            <% if(isLogin.name !== undefined) { %> <% if(isLogin.role === "admin") {
+            <div class="container-nav-home">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" href="/">Trang chủ</a>
+              </li>
+            </div>
+          
+              <% if(isLogin.name !== undefined) { %> <% if(isLogin.role === "admin") {
                 %>
-            <li class="dropdown">
+                <div class="container-nav">
+            <li class="dropdown" >
               <a
                 class="dropdown-toggle nav-link dropdown-toggle"
                 data-toggle="dropdown"
                 aria-expanded="false"
                 href="/"
+                
                 >Chức năng
               </a>
               <div class="dropdown-menu" role="menu">
@@ -259,6 +691,8 @@
               </div>
             </li>
             <% }} %>
+            </div>
+        
           </ul>
          
           <!-- <form class="form-inline mr-auto" target="_self">
@@ -281,18 +715,21 @@
                 <i class="fa-solid fa-user" style="margin-right: 5px"></i>
                 <%= isLogin.name %>
               </a> -->
-              
-              <a
-              class="dropdown-toggle nav-link dropdown-toggle text-white"
-              data-toggle="dropdown"
-              aria-expanded="false"
-              href="#"
-            >
-              <i class="fa-solid fa-user" style="margin-right: 5px"></i>
-              <%= isLogin.name %>
-            </a>
+              <div class="container-nav-user"> 
+                <a
+                class="dropdown-toggle nav-link dropdown-toggle text-white"
+                data-toggle="dropdown"
+                aria-expanded="false"
+                href="/"
+                style="color: #e9fa00;"
+              >
+                <i class="fa-solid fa-user" style="margin-right: 5px;color: black;"></i>
+                <span style="color: #020af8;"><%= isLogin.name %></span>
+                </a>
             
-                <div class="dropdown-menu">
+
+            
+                <div class="dropdown-menu" >
                     <a class="navbar-item" href="/users/edit">
                       <i class="fa-sharp fa-regular fa-address-card fa-fw" style="margin-right: 5px"></i>
                       Profile
@@ -307,7 +744,7 @@
                     </a>
                   </div>
                   
-              </li>
+                </div>
            
             </div>
             <% } %> <% if(isLogin.name === undefined) { %>
@@ -348,160 +785,5 @@
 
 
 
-<!-- <nav
-  class="navbar"
-  style="
-    background-image: url('https://img.freepik.com/premium-photo/blue-sky-watercolor-effect-stains-paint-splatter-grunge-background-texture-soft-blue-pastel-website-banner-design_364465-1395.jpg');
-    height: 10vh;
-  "
-  role="navigation"
-  aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-      <img
-        src="https://clipart-library.com/images/8i6oojBXT.png"
-        width="100"
-        height="152" />
-    </a>
-  </div>
 
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <div class="navbar-start">
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a
-                class="btn btn-group-sm"
-                href="/"
-                style="color: rgb(239, 166, 39)">
-                <strong>
-                  <i class="fa-solid fa-house" style="margin-right: 5px"></i>
-                  Trang Chủ
-                </strong>
-              </a>
-            </div>
-          </div>
-        </div>
-        <% if(isLogin.name !== undefined) { %> <% if(isLogin.role === "admin") {
-        %>
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a
-                class="btn btn-group-sm"
-                href="/users/dashboard"
-                style="color: rgb(239, 166, 39)">
-                <strong>
-                  <i class="fa-solid fa-house" style="margin-right: 5px"></i>
-                  Dashboard
-                </strong>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a
-                class="btn btn-group-sm"
-                href="/players"
-                style="color: rgb(239, 166, 39)">
-                <strong>
-                  <i
-                    class="fa-sharp fa-solid fa-futbol"
-                    style="margin-right: 5px"></i>
-                  Sản Phẩm
-                </strong>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a
-                class="btn btn-group-sm"
-                href="/nations"
-                style="color: rgb(239, 166, 39)">
-                <strong>
-                  <i
-                    class="fa-sharp fa-solid fa-earth-asia"
-                    style="margin-right: 5px"></i>
-                  Loại
-                </strong>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a
-                class="btn btn-group-sm"
-                href="/accounts"
-                style="color: rgb(239, 166, 39)">
-                <strong>
-                  <i
-                    class="fa-sharp fa-solid fa-users"
-                    style="margin-right: 5px"></i>
-
-                  Users
-                </strong>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <% }} %>
-      </div>
-    </div>
-
-    <div class="navbar-end">
-      <% if(isLogin.name !== undefined) { %>
-      <div
-        class="navbar-item has-dropdown is-hoverable"
-        style="margin-right: 35px">
-        <a class="navbar-link">
-          <i class="fa-solid fa-user" style="margin-right: 5px"></i>
-          <%= isLogin.name %>
-        </a>
-
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="/users/edit">
-            <i
-              class="fa-sharp fa-regular fa-address-card"
-              style="margin-right: 5px"></i>
-            Profile
-          </a>
-          <a class="navbar-item" href="/users/change-password">
-            <i class="fa-solid fa-key" style="margin-right: 5px"></i>
-            Change password
-          </a>
-          <a class="navbar-item" href="/users/logout">
-            <i
-              class="fa-solid fa-arrow-right-from-bracket"
-              style="margin-right: 5px"></i>
-            Logout
-          </a>
-        </div>
-      </div>
-      <% } %> <% if(isLogin.name === undefined) { %>
-      <div class="navbar-item">
-        <div class="buttons">
-          <a class="button is-primary" href="/users/login">
-            <strong>
-              <i
-                class="fa-solid fa-right-to-bracket"
-                style="margin-right: 5px"></i
-              >Log in</strong
-            >
-          </a>
-        </div>
-      </div>
-        </div>
-         <% } %>
-  </div>
-</nav> -->
+  

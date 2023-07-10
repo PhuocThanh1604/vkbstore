@@ -4,10 +4,11 @@
 
     <body style="background-image: url('https://pbs.twimg.com/amplify_video_thumb/1010946076902293506/img/3wqJP6Lr6uh4uCL0.jpg:large');background-size: cover;">
       
-        <a class="button is-primary" style="position: fixed; bottom: 8vh; right: 2vw;"
-            onClick="document.querySelector('#popup2').classList.add('is-active')">
-           Loại sản phẩm mới
-        </a>
+ 
+        <a class="button is-primary button-create-category responsive-button-category" 
+        onClick="document.querySelector('#popup').classList.add('is-active')">
+            Tạo mới sản phẩm
+          </a>
         <% if(error_msg !='' ){ %>
             <div class="notification is-danger is-light"
             style="margin-top: 55px;font-size: 36px;font-weight: 900;margin-bottom: 20px;display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 18px;">
@@ -74,10 +75,15 @@
                 </div>
 
                 <!-- table content -->
-                <div style="display:flex; justify-content: center;">
-                    <div>
-                        <table id="mytable" class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth"
-                            style="width: 1000px;">
+
+        
+        <div id="search-results" style="display: flex; justify-content: center">
+            <div class="table-container">
+                        <table
+                        id="mytable"
+                        class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth"
+                        style="width: 1000px">
+                      
                             <thead style="height: 40px; background-color: aqua;">
                                 <tr>
                                     <th style="text-align: center;">Tên sản phẩm </th>

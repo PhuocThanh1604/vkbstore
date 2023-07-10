@@ -13,6 +13,8 @@ const playerRouter = require("./routes/playerRouter");
 const userRouter = require("./routes/userRouter");
 require('./config/passport')(passport);
 const url = "mongodb+srv://vophuocthanha19052017:pthanh@cluster0.zdxr5zm.mongodb.net/databasevkb?retryWrites=true&w=majority";
+const url2="mongodb://127.0.0.1:27017/databasevkb"
+// const port = 3000
 const connect = mongoose.connect(url);
 // mongoose.set('strictQuery',true);
 
@@ -71,7 +73,7 @@ app.use("/nations", nationRouter);
 app.use("/players", playerRouter);
 app.use("/users", userRouter);
 app.use("/", indexRouter);
-
+// app.listen(port,()=>console.log(`App listing at http://localhost:{port}`))
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

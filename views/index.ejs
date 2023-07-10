@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include ('./patials/head') %>
-  <body style="background-image: url('https://t3.ftcdn.net/jpg/04/84/56/02/360_F_484560228_OFLEvMOwpDAJfvAHveEBdVnzu4w6gfCe.jpg');background-size: cover;">
+  <body style="background-image: url('');background-size: cover;">
     <div style="margin-top:90px ;">
       <% if(error_msg !='' ){ %>
         <div class="notification is-danger is-light" 
@@ -18,42 +18,45 @@
             </div>
               <% } %>
     </div>
-    <div class="columns is-multiline" style="margin-top: 120px; margin-left: 20px; margin-right: 20px;">
+   
+    <div class="columns is-multiline" >
       <% players.forEach(function(player) { %>
-        <div class="column is-one-quarter">
-          <div class="card">
-            <!-- <div class="card-image">
-              <figure class="image is-3by5">
-                <img src="<%= player.image %>" alt="Placeholder image">
-              </figure>
-            </div> -->
-            <div class="card-image">
-              <% for (let imageUrl of player.images) { %>
-              <figure class="image is-3by5">
-                <img src="<%= imageUrl %>" alt="Placeholder image">
-              </figure>
-              <% } %>
-            </div>
-            
-            <div class="card-content">
-
-              <div class="media">
-                <div class="media-left">
-                  <figure style="height: 46px; width: 70px;">
-                    <img src= "https://cloudinary.fifa.com/api/v3/picture/flags-sq-2/<%=player.nation.name.slice(0, 3).toUpperCase()%>?tx=c_fill,g_auto,q_auto,w_70,h_46" alt="Placeholder image">
-                  </figure>
-                </div>
-                <div class="media-content">
-                  <p class="title is-4"><%= player.name %></p>
-                  <p class="subtitle is-6"><%= player.nation.name %></p>
-                </div>
+      <div class="column is-one-quarter">
+        <div class="card-index">
+          <div class="image-container-index">
+            <div id="image-slider">
+              <div>
+                <a href="<%= player.images[0] %>" data-lightbox="image-gallery" data-title="Image 0">
+                  <img src="<%= player.images[0] %>" class="d-block w-100" alt="Image 0">
+                </a>
               </div>
-              <a href="/players/<%=player.id%>" class="btn btn-info" style="width: 100%;">Thông tin chi tiết</a>
             </div>
           </div>
+          <div class="card-content-index">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4"><%= player.name %></p>
+                <p class="subtitle is-6"><%= player.nation.name %></p>
+              </div>
+            </div>
+            <a href="/players/<%=player.id%>" class="btn btn-info" style="width: 100%;">Thông tin chi tiết</a>
+          </div>
         </div>
-        <% }) %>
+      </div>
+      <% }) %>
     </div>
+    
+ 
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        lightbox.option({
+          'resizeDuration': 200,
+          'wrapAround': true
+        });
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   </body>
   <%- include ('./patials/footer') %>
 </html>

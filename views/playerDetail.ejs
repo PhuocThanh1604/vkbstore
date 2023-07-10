@@ -1,42 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include ('./patials/head') %>
-    <body style="background-image: url('https://t3.ftcdn.net/jpg/04/84/56/02/360_F_484560228_OFLEvMOwpDAJfvAHveEBdVnzu4w6gfCe.jpg');background-size: cover;">
-        <div class="columns is-multiline is-mobile" style="margin-top: 120px; margin-left: 20px; margin-right: 20px;">         
-            <div class="column is-two-fifths" >
-            <figure class="image is-2by3">
-                <img src="<%= player.image %>">
-              </figure>
+    <body style="background-image: url('');background-size: cover;">
+      <div class="columns is-multiline is-mobile" style="margin-top: 80px; margin-left: 20px; margin-right: 20px;">         
+        <div class="carousel-container">
+          <div id="image-slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <% player.images.forEach(function(image, index) { %>
+              <div class="carousel-item <% if (index === 0) { %>active<% } %>">
+                <a href="<%= image %>" data-lightbox="image-gallery" data-title="Image <%= index %>">
+                  <img src="<%= image %>" class="d-block w-100" alt="Image <%= index %>">
+                </a>
+              </div>
+              <% }) %>
             </div>
-            <div class="column ">
-                <div class="box" style="width: 10vw; text-align: center; font-weight: 500; background-color: blueviolet; color: #fff;">
-                    Thông tin 
-                  </div>
-                <div class="card">
-                    <div class="card-content" style="line-height: 40px;">                
-                      <div class="content">
-                       <strong>Tên</strong> : <%= player.name %>                                                                
-                      </div>
-                      <div class="content">
-                        <strong>Mô tả</strong>: <%= player.career %>                                                                
-                      </div>
-                      <div class="content">
-                        <strong>Position</strong> : <%= player.position %>                                                                
-                      </div>
-                      <div class="content">
-                        <strong>Số lượng</strong>: <%= player.goals %>                                                                
-                      </div>
-                      <div class="content">
-                        <strong>Loại sản phẩm</strong>: <%= player.nation.name %>                                                                
-                      </div>
-                      <div class="content">
-                       <strong>Status</strong> : <%=player.isCaptain===true ? 'Còn hàng' : 'No' %>                                                                
-                      </div>
-                    </div>
-                  </div>
+            <a class="carousel-control-prev" href="#image-slider" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#image-slider" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+        <div class="column-detail">
+          <div class="box box-info-text">
+            Thông tin sản phẩm
+          </div>
+          <div class="card-content-detail">
+            <div class="card-content" style="line-height: 40px;">                
+              <div class="content-detail">
+                <strong>Tên</strong> : <%= player.name %>                                                                
+              </div>
+              <div class="content-detail">
+                <strong>Mô tả</strong>: <%= player.career %>                                                                
+              </div>
+              <div class="content-detail">
+                <strong>Bảo Hành</strong> : <%= player.position %>                                                                
+              </div>
+              <div class="content-detail">
+                <strong>Số lượng</strong>: <%= player.amount %>                                                                
+              </div>
+              <div class="content-detail">
+                <strong>Gía</strong>: <%= player.price %>                                                                
+              </div>
+              <div class="content-detail">
+                <strong>Loại sản phẩm</strong>: <%= player.nation.name %>                                                                
+              </div>
+              <div class="content-detail">
+                <strong>Status</strong> : <%=player.isCaptain===true ? 'Còn hàng' : 'No' %>                                                                
+              </div>
             </div>
-  
-          </div>                                
-                             
+          </div>
+        </div> 
+      </div>
+            
+                            
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              lightbox.option({
+                'resizeDuration': 200,
+                'wrapAround': true
+              });
+            });
+          </script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>                    
     </body>
 </html>

@@ -2,8 +2,9 @@
 <html lang="en">
 <%- include ('./patials/head') %>
 <body style="background-color: rgb(184, 170, 243);">
+    
     <div class="container" >
-        <h1 style="text-align: center; margin-top: 100px; font-size: 40px; font-weight: 500; margin-bottom: 20px;">UPDATE PLAYER</h1>
+        <h1 style="text-align: center; margin-top: 100px; font-size: 40px; font-weight: 500; margin-bottom: 20px;">Chỉnh sửa sản phẩm</h1>
         <% if(error_msg != ''){ %>
             <%= error_msg %>
         <% } %>
@@ -36,7 +37,12 @@
                               </figure></div> -->
                             <div class="file has-name is-boxed">
                                 <label class="file-label">
-                                    <input class="file-input" type="file" name="file" >
+                                    <input
+                          class="file-input"
+                          type="file"
+                          name="files"
+                          multiple />
+
                                     <span class="file-cta" >
                                         <span class="file-icon">
                                             <i class="fas fa-upload"></i>
@@ -56,10 +62,10 @@
                 </div>
             </div>
        
-        <div style="display: flex; align-items: center; justify-content: space-around; width: 60vw; margin-left: 6vw;">
+        
             <div class="field is-horizontal">
                 <div class="field-label is-normal">
-                    <label class="label">Position</label>
+                    <label class="label">Bảo hành</label>
                 </div>
                 <div class="field-body">
                     <div class="field is-narrow">
@@ -85,7 +91,7 @@
                 <div class="field-body">
                     <div class="field is-narrow">
                         <div class="control">
-                            <input class="input is-info" name="price" required min="0" type="number" value="<%= player.goals %>">
+                            <input class="input is-info" name="price" required min="0" type="number" value="<%= player.price %>">
                         </div>                    
                     </div>
                 </div>
@@ -97,7 +103,7 @@
                 <div class="field-body">
                     <div class="field is-narrow">
                         <div class="control">
-                            <input class="input is-info" name="amount" required min="0" type="number" value="<%= player.goals %>">
+                            <input class="input is-info" name="amount" required min="0" type="number" value="<%= player.amount %>">
                         </div>                    
                     </div>
                 </div>
@@ -123,7 +129,7 @@
                 </div>
             </div>
     
-        </div>
+      
         <div class="field is-horizontal">
             <div class="field-label is-normal">
                 <label class="label">Mô tả</label>
@@ -151,7 +157,7 @@
                 <div class="field-label is-normal">
                   <label class="label" style="padding-bottom: 10px;">Trạng Thái</label>
                 </div>
-                <div class="field-body">
+                <div class="field-body status" >
                   <div class="field">
                     <div class="control">
                       <label class="checkbox">

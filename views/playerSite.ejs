@@ -4,15 +4,10 @@
 
   <body
     style="
-      background-image: url('https://t3.ftcdn.net/jpg/04/84/56/02/360_F_484560228_OFLEvMOwpDAJfvAHveEBdVnzu4w6gfCe.jpg');
+      background-image: url('');
       background-size: cover;
     ">
-    <a
-      class="button is-primary"
-      style="position: fixed; bottom: 4vh; right: 2vw"
-      onClick="document.querySelector('#popup').classList.add('is-active')">
-      Tạo mới sản phẩm
-    </a>
+    
     <% if(error_msg !='' ){ %>
     <div
       class="notification is-danger is-light"
@@ -76,16 +71,12 @@
                   <div class="control">
                     <div class="file has-name is-boxed is-primary">
                       <label class="file-label">
-                        <!-- <input class="file-input" type="file" name="file" required onchange="handleFileSelect(event)"> -->
-
-                        <!-- <input class="file-input" type="file" name="file" > -->
+                   
                         <input
                           class="file-input"
                           type="file"
                           name="files"
                           multiple />
-
-                        <!-- <input class="input is-info" type="text" name="file" required> -->
                         <span class="file-cta">
                           <span class="file-icon">
                             <i class="fas fa-upload"></i>
@@ -198,14 +189,14 @@
                 align-items: center;
               ">
               <div class="field-label is-normal">
-                <label class="label" style="padding-bottom: 10px"
+                <label class="label" style="padding-bottom: 10px ; margin: 10px;margin-top: 2px;"
                   >Trạng Thái</label
                 >
               </div>
               <div class="field-body">
                 <div class="field">
                   <div class="control">
-                    <label class="checkbox">
+                    <label class="checkbox"style=" margin-top: -50px;">
                       <input type="checkbox" name="isCaptain" value="true" />
                       Còn hàng
                     </label>
@@ -232,8 +223,7 @@
       </div>
     </div>
     <form
-      id="search-form"
-      style="margin-top: 10px; margin-left: 200px; margin-right: 200px">
+    id="search-form" style="margin-top: 10px;">
       <p class="control has-icons-left">
         <input
           class="input"
@@ -245,63 +235,59 @@
         </span>
       </p>
     </form>
-    <div
-      class="box"
-      style="
-        background-color: hsl(171, 100%, 41%);
-        padding: 20px;
-        margin-top: 10px;
-        margin-left: 200px;
-        width: 20vw;
-      ">
-      <div style="font-size: 20px; font-weight: 700">
-        <i class="fa-solid fa-filter" style="margin-right: 5px"></i>Lọc
-      </div>
-      <div class="field is-horizontal">
-        <div class="field-label is-normal">
-          <label class="label">Bảo Hành</label>
+    <div class="custom-box">
+         <div class="box" style="background-color: hsl(171, 100%, 41%); padding: 20px; margin-top: 10px; margin-left: 200px; max-width: 400px; margin-bottom: 10px;">
+        <div style="font-size: 20px; font-weight: 700">
+          <i class="fa-solid fa-filter" style="margin-right: 5px"></i>Lọc
         </div>
-        <div class="field-body">
-          <div class="field is-narrow">
-            <div class="control">
-              <div class="select is-fullwidth">
-                <select name="filter-position" id="filter-position">
-                  <option value="">Lọc theo bảo hành</option>
-                  <%for (let position of positionList){ %>
-                  <option value="<%= position.name %>">
-                    <%= position.name %>
-                  </option>
-                  <% } %>
-                </select>
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <label class="label">Bảo Hành</label>
+          </div>
+          <div class="field-body">
+            <div class="field is-narrow">
+              <div class="control">
+                <div class="select is-fullwidth">
+                  <select name="filter-position" id="filter-position">
+                    <option value="">Lọc theo bảo hành</option>
+                    <%for (let position of positionList){ %>
+                    <option value="<%= position.name %>">
+                      <%= position.name %>
+                    </option>
+                    <% } %>
+                  </select>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="field is-horizontal">
-        <div class="field-label is-normal">
-          <label class="label">Loại sản phẩm</label>
-        </div>
-        <div class="field-body">
-          <div class="field is-narrow">
-            <div class="control">
-              <div class="select is-fullwidth">
-                <select name="filter-nation" id="filter-nation">
-                  <option value="">Lọc theo loại sản phẩm</option>
-                  <%for (let nation of nationsList){ %>
-                  <option value="<%= nation._id %>"><%= nation.name %></option>
-                  <% } %>
-                </select>
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <label class="label">Loại sản phẩm</label>
+          </div>
+          <div class="field-body">
+            <div class="field is-narrow">
+              <div class="control">
+                <div class="select is-fullwidth">
+                  <select name="filter-nation" id="filter-nation">
+                    <option value="">Lọc theo loại sản phẩm</option>
+                    <%for (let nation of nationsList){ %>
+                    <option value="<%= nation._id %>"><%= nation.name %></option>
+                    <% } %>
+                  </select>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
+    <a class="button is-primary button-create responsive-button" onClick="document.querySelector('#popup').classList.add('is-active')">
+      Tạo mới sản phẩm
+    </a>
     <!-- table content -->
     <div id="search-results" style="display: flex; justify-content: center">
-      <div>
+      <div class="table-container">
         <table
           id="mytable"
           class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth"
@@ -323,13 +309,27 @@
             <% players.forEach(function(player) { %>
             <tr>
               <td style="width: 96px; height: 144px">
-                <div class="image-slider">
-                  <% player.images.forEach(function(image) { %>
-                  <figure>
-                    <img src="<%= image %>" />
-                  </figure>
-                  <% }) %>
+                <div id="image-slider" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner-list">
+                    <% player.images.forEach(function(image, index) { %>
+                    <div class="carousel-item <% if (index === 0) { %>active<% } %>">
+                      <a href="<%= image %>" data-lightbox="image-gallery" data-title="Image <%= index %>">
+                        <img src="<%= image %>" class="d-block w-100" alt="Image <%= index %>">
+                      </a>
+                    </div>
+                    <% }) %>
+                  </div>
+                  <a class="carousel-control-prev" href="#image-slider" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#image-slider" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
                 </div>
+                
+                
               </td>
               <td style="padding-top: 60px"><%= player.name %></td>
               <td style="padding-top: 60px"><%= player.career %></td>
@@ -701,20 +701,35 @@
         }
       });
     });
+    $(document).ready(function() {
+  $('.table-container').slick({
+    infinite: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    variableWidth: true
+  });
+});
+$(document).ready(function() {
+  $('#image-slider').slick({
+    dots: true,
+    arrows: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true
+    });
+  });
+
+
   </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      $('.image-slider').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        variableWidth: true,
-        arrows: true,
-        prevArrow: '<button type="button" class="slick-prev">Previous</button>',
-        nextArrow: '<button type="button" class="slick-next">Next</button>',
-      });
-    });
-  </script>
+
 </html>

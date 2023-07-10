@@ -437,10 +437,11 @@ class PlayerController {
     if (!req.file) {
       data = {
         name: req.body.name,
+        images: req.body.images, // Sử dụng URL của ảnh đã lấy từ Cloudinary
         career: req.body.career,
-     
         position: req.body.position,
-        goals: req.body.goals,
+        price: req.body.price,
+        amount: req.body.amount,
         nation: req.body.nation,
         isCaptain: req.body.isCaptain === undefined ? false : true,
       };
