@@ -22,7 +22,7 @@ class userController {
     User.find({})
       .then((users) => {
         res.render("accounts", {
-          title: "The list of Users",
+          title: "Danh sách người dùng",
           users: users,
           isLogin: { name: req.name, role: req.role },
         });
@@ -91,7 +91,7 @@ class userController {
     let errors = [];
 
     if (!email) {
-      errors.push({ msg: "Please enter your email" });
+      errors.push({ msg: "Vui nhập email" });
       res.render("forgot-password", {
         errors,
         email,
@@ -101,7 +101,7 @@ class userController {
       User.findOne({ email: email })
         .then((user) => {
           if (!user) {
-            errors.push({ msg: "No user with that email address" });
+            errors.push({ msg: "Không có người dùng nào có địa chỉ email đó" });
             res.render("forgot-password", {
               errors,
               email,
@@ -161,7 +161,7 @@ class userController {
     const confirmPassword = req.body.confirmPassword;
     console.log("ID password: ", req.params.id);
     if (password !== confirmPassword) {
-      req.flash("error_msg", "Confirm password not match");
+      req.flash("error_msg", "Xác nhận mật khẩu không khớp");
       console.log("abc");
       return res.redirect(`/users/reset-password/${userId}`);
     }
@@ -170,7 +170,7 @@ class userController {
     User.findById(userId)
       .then((user) => {
         if (!user) {
-          req.flash("error_msg", "User not found");
+          req.flash("error_msg", "User không tồn tại");
           res.redirect("/users/forgot-password");
         } else {
           // Hash new password and update user's document in database
@@ -180,7 +180,7 @@ class userController {
             user
               .save()
               .then(() => {
-                req.flash("success_msg", "Change password successfully");
+                req.flash("success_msg", "Thay đổi mật khẩu thành công");
                 res.redirect("/users/login");
               })
               .catch(next);
@@ -249,26 +249,26 @@ class userController {
     const newPassword = req.body.newPassword;
     const confirmPassword = req.body.confirmPassword;
     if (currentPassword.length < 6) {
-      req.flash("error_msg", "Current password must be at least 6 characters!");
+      req.flash("error_msg", "Mật khẩu hiện tại phải có ít nhất 6 ký tự!");
       return res.redirect("/users/change-password");
     }
     if (newPassword.length < 6) {
-      req.flash("error_msg", "New password must be at least 6 characters!");
+      req.flash("error_msg", "Mật khẩu mới phải có ít nhất 6 ký tự!");
       return res.redirect("/users/change-password");
     }
     if (confirmPassword.length < 6) {
-      req.flash("error_msg", "Confirm password must be at least 6 characters!");
+      req.flash("error_msg", "Xác nhận mật khẩu phải có ít nhất 6 ký tự!");
       return res.redirect("/users/change-password");
     }
     if (currentPassword === newPassword) {
       req.flash(
         "error_msg",
-        "Current password is duplicated with New Password!"
+        "Mật khẩu hiện tại được sao chép với Mật khẩu mới!"
       );
       return res.redirect("/users/change-password");
     }
     if (newPassword !== confirmPassword) {
-      req.flash("error_msg", "Confirm Password not match with New Password!");
+      req.flash("error_msg", " Xác nhận Mật khẩu không khớp với Mật khẩu mới!");
       return res.redirect("/users/change-password");
     }
     User.findById(req.userId)
@@ -277,30 +277,30 @@ class userController {
         bcrypt.compare(currentPassword, user.password, (err, isMatch) => {
           if (err) {
             console.log(err);
-            req.flash("error_msg", "Error compare password!");
+            req.flash("error_msg", "Lỗi so sánh mật khẩu!!");
             return res.redirect("/users/change-password");
           }
           if (isMatch) {
             bcrypt.hash(newPassword, 10, function (err, hash) {
               if (err) {
                 console.log(err);
-                req.flash("error_msg", "Hash password failed!");
+                req.flash("error_msg", " Mật khẩu băm không thành công!");
                 return res.redirect("/users/change-password");
               }
               User.findByIdAndUpdate({ _id: req.userId }, { password: hash })
                 .then(() => {
                   res.clearCookie("jwt");
-                  req.flash("success_msg", "Update password successfully!");
+                  req.flash("success_msg", "Cập nhật mật khẩu thành công!");
                   res.redirect("/");
                 })
                 .catch((err) => {
                   console.log(err);
-                  req.flash("error_msg", "Update failed!");
+                  req.flash("error_msg", "Cập nhật không thành công!");
                   return res.redirect("/users/change-password");
                 });
             });
           } else {
-            req.flash("error_msg", "Current password is incorrect!");
+            req.flash("error_msg", "Mật khẩu hiện tại không đúng!");
             return res.redirect("/users/change-password");
           }
         });
@@ -346,7 +346,7 @@ class userController {
       if (err) {
         return next(err);
       }
-      req.flash("success_msg", "You are logged out");
+      req.flash("success_msg", "Bạn đăng xuất tài khoản");
       //  res.clearCookie('jwt');
       res.redirect("/users/login");
     });
@@ -360,7 +360,7 @@ class userController {
       .then((user) => {
         console.log(user);
         res.render("profile", {
-          title: "The detail of User",
+          title: "Thông tin tiết người dùng",
           user: user,
           isLogin: { name: req.name, role: req.role },
         });
@@ -410,7 +410,7 @@ class userController {
         } catch (err) {
           console.error("Failed to verify JWT", err);
         }
-        req.flash("success_msg", "Updated successfully!");
+        req.flash("success_msg", " Cập nhật thành công!");
         res.redirect(`/users/edit`);
       })
       .catch((err) => {
@@ -424,7 +424,7 @@ class userController {
     User.findOne({ username: userName })
       .then((user) => {
         if (!user) {
-          req.flash("error_msg", "This username is not registed!");
+          req.flash("error_msg", "Tên người dùng này chưa được đăng ký!");
           return res.redirect("/users/login");
         }
         //Match password
@@ -456,7 +456,7 @@ class userController {
               return res.redirect("/");
             }
           } else {
-            req.flash("error_msg", "Password is incorrect!");
+            req.flash("error_msg", "Mật khẩu không đúng!");
             return res.redirect("/users/login");
           }
         });
@@ -465,7 +465,7 @@ class userController {
   }
   logout(req, res, next) {
     res.clearCookie("jwt");
-    req.flash("success_msg", "You are logged out");
+    req.flash("success_msg", "Bạn đã đăng xuất tài khoản");
     res.redirect("/");
   }
 }
