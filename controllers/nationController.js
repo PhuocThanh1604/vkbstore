@@ -5,7 +5,7 @@ class NationController {
     Nations.find({})
       .then((nations) => {
         res.render("nationSite", {
-          title: "Danh sách loại sản phẩm",
+          title: "The list of Nations",
           nations: nations,
           isLogin: {name: req.name, role:req.role}
         });
@@ -20,7 +20,7 @@ class NationController {
     const nation = new Nations(dataNew);
     Nations.find({ name: nation.name }).then((nationCheck) => {
       if (nationCheck.length > 0) {
-        req.flash("error_msg", "Trùng tên sản phẩm đã có");
+        req.flash("error_msg", "Duplicate nation name!");
         res.redirect("/nations");
       } else {
         nation
@@ -35,7 +35,7 @@ class NationController {
     Nations.findById(nationId)
       .then((nation) => {
         res.render("editNation", {
-          title: "Danh sách loại sản phẩm",
+          title: "The detail of Nation",
           nation: nation,
           isLogin: {name: req.name, role:req.role}
         });
@@ -64,8 +64,7 @@ class NationController {
         if (data.length > 0) {
           req.flash(
             "error_msg",
-            `
-            Bạn không thể xóa loại sản phẩm này vì nó đã được kết nối với những sản phẩm khác`
+            `You can not delete this nation because it has already been connected with other players`
           );
           return res.redirect("/nations");
         } else {

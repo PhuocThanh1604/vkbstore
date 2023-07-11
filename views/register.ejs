@@ -10,12 +10,13 @@
 		integrity="sha512-XSL8md+KzAg/ysd1EBcvzQx+8keNkzJ1pogDe+bJN9P5/RW+5c5v5d6Am++F6fmnt8wpD22fCaC/MP1M48hRtg=="
 		crossorigin="anonymous"></script>
 </head>
-<body  style="display: flex; justify-content: center; align-items: center;  height: 100vh;background-size: cover; background-image:
-url(https://www.pngmagic.com/product_images/ecommerce-website-banner.jpg);">
-	   <div class="container-resgister">
-    	<form method="post" class="box-register" >
-	    <div class="field-register">
-			<label class="label">Tên tài khoản</label>
+<body>
+
+	   <div style="display: flex; justify-content: center; align-items: center; width: 100vw; height: 100vh;background-size: cover; background-image:
+	    url(https://free4kwallpapers.com/uploads/originals/2015/11/22/football--stadium-wallpaper.jpg);">
+    	<form method="post" class="box" style="width: 30vw;">
+	    <div class="field">
+			<label class="label">Username</label>
 			<div class="control has-icons-left">               
 			  <input class="input" name="username" type="text" placeholder="Type your username....">
 			  <span class="icon is-small is-left">
@@ -29,7 +30,7 @@ url(https://www.pngmagic.com/product_images/ecommerce-website-banner.jpg);">
 	          <input class="input is-success" name="password" type="password" >
 	        </div>  -->
 
-			<label class="label">Mật khẩu</label>
+			<label class="label">Password</label>
 			<div class="control has-icons-left">
 			  <input class="input" name="password" type="password" placeholder="Password">
 			  <span class="icon is-small is-left">
@@ -40,7 +41,7 @@ url(https://www.pngmagic.com/product_images/ecommerce-website-banner.jpg);">
 	      </div>  
 	    <div class="field is-grouped">
 	        <div class="control">
-	          <button class="button is-primary">Đăng kí</button>
+	          <button class="button is-primary">Register</button>
 	        </div>
 	    </div>
 
@@ -50,8 +51,8 @@ url(https://www.pngmagic.com/product_images/ecommerce-website-banner.jpg);">
 					<%= error.msg %>
 				  </div>
 			   <% }); %> <% } %>
-			   <p class="text-center text-muted mt-5 mb-0">Đã có tài khoản? <a href="http://localhost:3000/users/login"
-				class="fw-bold text-body"><u>Đăng nhập tại đây</u></a></p>
+			   <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="http://localhost:3000/users/login"
+				class="fw-bold text-body"><u>Login here</u></a></p>
 	</form>
 </div>
 </body>

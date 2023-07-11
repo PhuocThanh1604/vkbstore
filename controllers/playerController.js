@@ -30,7 +30,7 @@ class PlayerController {
                 .populate('nation', ['name', 'description'])
                 .then((players) => {
                   res.render('index', {
-                    title: 'Danh sách của sản phẩm',
+                    title: 'The list of Players',
                     players: players,
                     positionList: postitionData,
                     clubList: clubData,
@@ -57,7 +57,7 @@ class PlayerController {
                 .populate('nation', ['name', 'description'])
                 .then((players) => {
                   res.render('index', {
-                    title: 'Danh sách của sản phẩm',
+                    title: 'The list of Players',
                     players: players,
                     positionList: postitionData,
                     clubList: clubData,
@@ -83,7 +83,7 @@ class PlayerController {
             .populate('nation', ['name', 'description'])
             .then((players) => {
               res.render('index', {
-                title: 'Danh sách của sản phẩm',
+                title: 'The list of Players',
                 players: players,
                 positionList: postitionData,
                 clubList: clubData,
@@ -161,7 +161,7 @@ class PlayerController {
           })
           .then((players) => {
             res.render('playerSite', {
-              title: 'Danh sách của sản phẩm',
+              title: 'The list of Players',
               players: players,
               positionList: postitionData,
               clubList: clubData,
@@ -193,7 +193,7 @@ class PlayerController {
           })
           .then((players) => {
             res.render('playerSite', {
-              title: 'Danh sách của sản phẩm',
+              title: 'The list of Players',
               players: players,
               positionList: postitionData,
               clubList: clubData,
@@ -245,7 +245,7 @@ class PlayerController {
         })
         .then((players) => {
           res.render('playerSite', {
-            title: 'Danh sách của sản phẩm',
+            title: 'The list of Players',
             players: players,
             positionList: postitionData,
             clubList: clubData,
@@ -324,7 +324,7 @@ class PlayerController {
       if (nations.length === 0) {
         req.flash(
           'error_msg',
-          'Vui lòng nhập dữ liệu của loại sản phẩm trước!!!'
+          'Please input data of nations in Database first!!!'
         );
         return res.redirect('/players');
       }
@@ -358,7 +358,7 @@ class PlayerController {
                 .populate('nation', 'name')
                 .then((player) => {
                   res.render('playerDetail', {
-                    title: 'Chi tiết sản phẩmr',
+                    title: 'The detail of Player',
                     player: player,
                     positionList: postitionData,
                     clubList: clubData,
@@ -379,7 +379,7 @@ class PlayerController {
                 .populate('nation', 'name')
                 .then((player) => {
                   res.render('playerDetail', {
-                    title: 'Chi tiết sản phẩm',
+                    title: 'The detail of Player',
                     player: player,
                     positionList: postitionData,
                     clubList: clubData,
@@ -399,7 +399,7 @@ class PlayerController {
             .populate('nation', 'name')
             .then((player) => {
               res.render('playerDetail', {
-                title: 'Chi tiết sản phẩm',
+                title: 'The detail of Player',
                 player: player,
                 positionList: postitionData,
                 clubList: clubData,
@@ -420,7 +420,7 @@ class PlayerController {
           .populate('nation', 'name')
           .then((player) => {
             res.render('editPlayer', {
-              title: 'Chi tiết sản phẩm',
+              title: 'The detail of Player',
               player: player,
               positionList: postitionData,
               clubList: clubData,
@@ -467,7 +467,7 @@ class PlayerController {
       })
       .catch((err) => {
         console.log('error update: ', err);
-        req.flash('error_msg', 'Trùng tên sản phẩm đã có');
+        req.flash('error_msg', 'Duplicate player name!');
         res.redirect(`/players/edit/${req.params.playerId}`);
       });
     //   }

@@ -4,7 +4,6 @@ var userSchema = new Schema({
     username: {
         type: String,
         required: true,
-        unique: true
     },
     password:  {
         type: String,
@@ -34,7 +33,6 @@ var userSchema = new Schema({
     email: {
         type: String,
         required: true,
-        unique: true
     }
 }, { timestamps: true });
 userSchema.statics.updateOTP = function(email, otp, expirationDate) {
