@@ -59,6 +59,21 @@
                     </div>
     
                     <form method="post">
+                      <% if(error_msg !='' ){ %>
+                        <div class="notification is-danger is-light" style="padding: 2px; text-align: center;">
+                          <%= error_msg %>
+                        </div>
+                        <% } %>
+                        <% if(success_msg !='' ){ %>
+                          <div class="notification is-success is-light" style="padding: 2px; text-align: center;">
+                            <%= success_msg %>
+                          </div>
+                          <% } %>
+                          <% if(error !='' ){ %>
+                            <div class="notification is-danger is-light" style="padding: 2px; text-align: center;">
+                              <%= error %>
+                            </div>
+                            <% } %>
                       <p>Xin hãy đăng nhập vào tài khoản của bạn</p>
     
                       <div class="form-outline mb-4">
