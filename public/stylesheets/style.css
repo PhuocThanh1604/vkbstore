@@ -16,3 +16,6 @@ td{
     display: none;
   }
 }
+.footer{
+margin-top: 20px; font-weight: bold; background-color: hsl(347, 93%, 52%)
+}

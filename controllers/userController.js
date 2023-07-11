@@ -180,7 +180,7 @@ class userController {
             user
               .save()
               .then(() => {
-                req.flash("success_msg", "Change password successfully");
+                req.flash("success_msg", "Thay đổi mật khẩu thành công!!");
                 res.redirect("/users/login");
               })
               .catch(next);
@@ -290,17 +290,17 @@ class userController {
               User.findByIdAndUpdate({ _id: req.userId }, { password: hash })
                 .then(() => {
                   res.clearCookie("jwt");
-                  req.flash("success_msg", "Update password successfully!");
+                  req.flash("success_msg", "Cập nhật mật khẩu thành công!");
                   res.redirect("/");
                 })
                 .catch((err) => {
                   console.log(err);
-                  req.flash("error_msg", "Update failed!");
+                  req.flash("error_msg", "Cập nhật thất bại");
                   return res.redirect("/users/change-password");
                 });
             });
           } else {
-            req.flash("error_msg", "Current password is incorrect!");
+            req.flash("error_msg", "Mật khẩu gần đây không đúng!!!");
             return res.redirect("/users/change-password");
           }
         });
@@ -346,7 +346,7 @@ class userController {
       if (err) {
         return next(err);
       }
-      req.flash("success_msg", "You are logged out");
+      req.flash("success_msg", "Bạn đã đăng xuất ");
       //  res.clearCookie('jwt');
       res.redirect("/users/login");
     });
@@ -410,7 +410,7 @@ class userController {
         } catch (err) {
           console.error("Failed to verify JWT", err);
         }
-        req.flash("success_msg", "Updated successfully!");
+        req.flash("success_msg", "Chỉnh sửa thành công");
         res.redirect(`/users/edit`);
       })
       .catch((err) => {
@@ -465,7 +465,7 @@ class userController {
   }
   logout(req, res, next) {
     res.clearCookie("jwt");
-    req.flash("success_msg", "You are logged out");
+    req.flash("success_msg", "Bạn đã đăng xuất");
     res.redirect("/");
   }
 }

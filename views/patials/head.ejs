@@ -79,6 +79,7 @@
     .header-dark .navbar .navbar-brand {
       font-weight: bold;
       color: inherit;
+
     }
 
     .header-dark .navbar .navbar-brand:hover {
@@ -235,6 +236,7 @@
   margin: 20px;
 
 }
+
 /* CSS cho chế độ mobile */
 @media (max-width: 767px) {
 
@@ -345,6 +347,7 @@
 .carousel-inner{
   background-color: black;
   color: black;
+  border-radius: 4px;
 }
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
@@ -434,34 +437,34 @@
 .container-nav{
   background-color: #f2f2f2; 
   border-radius: 15px;
-  border: 2px solid red;
+  border: 1.5px solid red;
   color: black;
 
 }
 .container-nav-home{
   background-color: #f2f2f2; 
   border-radius: 15px;
-  border: 2px solid red;
+  border: 1.5px solid red;
   color: black;
   margin-right: 5px;
 }
 .container-nav-user {
   background-color: #f2f2f2; 
   border-radius: 15px;
-  border: 2px solid red;
+  border: 1.5px solid red;
   color: black;
 }
 @media screen and (max-width: 480px) {
   .container-nav{
   background-color: #f2f2f2; 
   border-radius: 15px;
-  border: 2px solid red;
+  border: 1.5px solid red;
   color: black;
 }
 .container-nav-home{
   background-color: #f2f2f2; 
   border-radius: 15px;
-  border: 2px solid red;
+  border: 1.5px solid red;
   color: black;
 }
 }
@@ -473,7 +476,7 @@
     border-radius: 15px;
     display: flex;
     justify-content: center;
-    align-items: center;    border: 2px solid red;
+    align-items: center;    border: 1.5px solid red;
     color: black;
 }
 .container-nav-home{
@@ -484,7 +487,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid red;
+    border: 1.5px solid red;
     color: black;
 }
 .container-nav-user{
@@ -495,7 +498,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid red;
+    border: 1.5px solid red;
     color: black;
 }
 }
@@ -527,17 +530,22 @@
   text-align: center;
   color: white;
   background-color: blueviolet;
+  box-shadow: 0 4px 8px rgba(247, 5, 219, 0.2);
+
 }
 
 
-.card-content-detail{border: 2px solid black;
-
+.card-content-detail{border: 1.5px solid black;
+  border-radius: 6px;
 color: #020af8;}
 
 .carousel-container {
   width: 500px; /* Kích thước chiều rộng mong muốn */
   height: 500px; /* Kích thước chiều cao mong muốn */
   /* Các thuộc tính CSS khác cho div */
+  border: 1px solid black;
+border-radius: 4px;
+box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
 }
 @media screen and (max-width: 768px) {
   .box-info-text {
@@ -555,10 +563,13 @@ color: #020af8;}
     padding: 10px; /* Adjust the spacing between elements on mobile devices */
     line-height: 30px; /* Adjust the line height of the content on mobile devices */
     color: #454739;
+
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
   }
   
   .card-content {
     color: #283439;
+    
   }
 
   .carousel-container {
@@ -569,14 +580,14 @@ color: #020af8;}
 }
 }
 .box-info-text {
-  width: 200px;
+  width: 280px;
   height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.column-detail{margin-left: 20px;font-size: larger;}
+.column-detail{margin-left: 20px;font-size: larger;align-content: center; }
 
 .image-container-index {
   width: 100%; /* Set the width to 100% to match the card width */
@@ -587,10 +598,17 @@ color: #020af8;}
   width: 100%;
   height:300px;
   object-fit: cover;
+  border-top-left-radius:10px ;
+  border-top-right-radius:10px ;
+  border-bottom:  0.5 solid black;
 }
 
 .card-index{margin-left: 10px;
-margin-right: 10px; border: 1px solid black;}
+margin-right: 10px; border: 1px solid black;
+border-radius: 10px;
+border-bottom-right-radius:5px ;
+border-bottom-left-radius:5px ;
+}
 
 @media screen and (max-width: 768px) {
   .columns.is-multiline {
@@ -615,6 +633,7 @@ margin-right: 10px; border: 1px solid black;}
     height: 0;
     padding-bottom: 100%; /* Maintain a square aspect ratio */
     position: relative;
+    border-bottom: 1px solid black;
   }
 
   .image-container-index img {
@@ -633,6 +652,7 @@ margin-right: 10px; border: 1px solid black;}
     justify-content: center;
     padding: 20px;
     text-align: center;
+   
   }
 }
 .card-container-index{
@@ -656,6 +676,74 @@ margin-right: 10px; border: 1px solid black;}
 @media screen and (max-width: 768px) {
   .box-register {
     width: 90%; /* Adjust the width for mobile devices */
+  }
+}
+
+
+.new-nation-button {
+  position: fixed;
+margin-top: 10px;
+  margin-left: 200px;
+  margin-bottom: 800px;
+}
+.new-nation-button {
+  text-decoration: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  .new-nation-button {
+    /* Mobile styles */
+    position: static;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    
+ 
+  }
+}
+
+.new-nation-button {
+  text-decoration: none;
+}
+.btn-info {
+  /* Web styles */
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  /* Mobile styles */
+  .card-content-index {
+    text-align: center;
+    left: 0;
+  }
+  .card-content-index .media-content {
+    margin-top: 10px;
+    left: 0;
+  }
+  .card-content-index .btn-info-responsive {
+    margin-top: 10px;
+    width: 100%;
+ 
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+  /* Additional mobile styles */
+  .btn-info-responsive {
+    width: 100px;
+    color: yellow;
+  }
+}
+.card-index {
+  /* Web styles */
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+  /* Mobile styles */
+  .card-index {
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
   }
 }
 
@@ -692,7 +780,7 @@ margin-right: 10px; border: 1px solid black;}
                 class="dropdown-toggle nav-link dropdown-toggle"
                 data-toggle="dropdown"
                 aria-expanded="false"
-                href="/"
+                href="#"
                 
                 >Chức năng
               </a>
@@ -745,21 +833,21 @@ margin-right: 10px; border: 1px solid black;}
                 style="color: #e9fa00;"
               >
                 <i class="fa-solid fa-user" style="margin-right: 5px;color: black;"></i>
-                <span style="color: #020af8;"><%= isLogin.name %></span>
+                <span style="color: #000000;"><%= isLogin.name %></span>
                 </a>
             
 
             
                 <div class="dropdown-menu" >
-                    <a class="navbar-item" href="/users/edit">
-                      <i class="fa-sharp fa-regular fa-address-card fa-fw" style="margin-right: 5px"></i>
+                    <a class="dropdown-item" href="/users/edit">
+                      <i class="fa-sharp fa-regular fa-address-card fa-fw" style="margin-right: 5px;"></i>
                       Profile
                     </a>
-                    <a class="navbar-item" href="/users/change-password">
+                    <a class="dropdown-item" href="/users/change-password">
                       <i class="fa-solid fa-key fa-fw" style="margin-right: 5px"></i>
                       Change password
                     </a>
-                    <a class="navbar-item" href="/users/logout">
+                    <a class="dropdown-item" href="/users/logout">
                       <i class="fa-solid fa-arrow-right-from-bracket fa-fw" style="margin-right: 5px"></i>
                       Logout
                     </a>
@@ -769,17 +857,15 @@ margin-right: 10px; border: 1px solid black;}
            
             </div>
             <% } %> <% if(isLogin.name === undefined) { %>
-            <div class="navbar-item">
+            <div class="navbar-item" >
               <div class="buttons">
-                <a class="bbtn btn-light action-button" href="/users/login">
+                <a class="bbtn btn-light action-button" href="/users/login" style="background-color: #cb2b2b; text-decoration: none;">
                   <strong>
-                    <i
-                      class="fa-solid fa-right-to-bracket"
-                  ></i
-                    >Log in</strong
-                  >
+                    <i class="fa-solid fa-right-to-bracket mr-2"></i>Log in
+                  </strong>
                 </a>
               </div>
+              
             </div>
               </div>
                <% } %>

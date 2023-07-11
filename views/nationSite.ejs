@@ -2,13 +2,17 @@
 <html lang="en">
 <%- include ('./patials/head') %>
 
-    <body style="background-image: url('https://pbs.twimg.com/amplify_video_thumb/1010946076902293506/img/3wqJP6Lr6uh4uCL0.jpg:large');background-size: cover;">
+    <body style="background-image: url('');background-size: cover;">
       
  
-        <a class="button is-primary button-create-category responsive-button-category" 
+        <!-- <a class="button is-primary button-create-category responsive-button-category" 
         onClick="document.querySelector('#popup').classList.add('is-active')">
             Tạo mới sản phẩm
+          </a> -->
+          <a class="button is-primary new-nation-button" onClick="document.querySelector('#popup2').classList.add('is-active')">
+           Tạo loại sản phẩm
           </a>
+          
         <% if(error_msg !='' ){ %>
             <div class="notification is-danger is-light"
             style="margin-top: 55px;font-size: 36px;font-weight: 900;margin-bottom: 20px;display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 18px;">
@@ -27,11 +31,6 @@
                                 onclick="document.querySelector('#popup2').classList.remove('is-active')"></button>
                         </header>
                         <section class="modal-card-body">
-                            <% if (successMessage) { %>
-                                <div class="notification is-success">
-                                  <%= successMessage %>
-                                </div>
-                              <% } %>
                             <form method="post" action="/nations">
                                 <div class="field is-horizontal">
                                     <div class="field-label is-normal">
