@@ -10,6 +10,9 @@
               <div class="carousel-item <% if (index === 0) { %>active<% } %>">
                 <a href="<%= image %>" data-lightbox="image-gallery" data-title="Image <%= index %>">
                   <img src="<%= image %>" class="d-block w-100" alt="Image <%= index %>">
+                  <div class="carousel-caption">
+                    <p class="click-text">Hãy click vào để xem tất cả ảnh</p>
+                  </div>
                 </a>
               </div>
               <% }) %>
@@ -34,7 +37,7 @@
                 <strong>Tên</strong> : <%= player.name %>                                                                
               </div>
               <div class="content-detail">
-                <strong>Mô tả</strong>: <%= player.career %>                                                                
+                <strong>Mô tả</strong>: <%= player.desc %>                                                                
               </div>
               <div class="content-detail">
                 <strong>Bảo Hành</strong> : <%= player.position %>                                                                

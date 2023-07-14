@@ -311,7 +311,7 @@ class PlayerController {
     const data = {
       name: req.body.name,
       images: req.body.images, // Sử dụng URL của ảnh đã lấy từ Cloudinary
-      career: req.body.career,
+      desc: req.body.desc,
       position: req.body.position,
       price: req.body.price,
       amount: req.body.amount,
@@ -438,7 +438,7 @@ class PlayerController {
       data = {
         name: req.body.name,
         images: req.body.images, // Sử dụng URL của ảnh đã lấy từ Cloudinary
-        career: req.body.career,
+        desc: req.body.desc,
         position: req.body.position,
         price: req.body.price,
         amount: req.body.amount,
@@ -449,7 +449,7 @@ class PlayerController {
       data = {
         name: req.body.name,
         image: req.body.image, 
-        career: req.body.career,
+        desc: req.body.desc,
         position: req.body.position,
         goals: req.body.goals,
         nation: req.body.nation,
