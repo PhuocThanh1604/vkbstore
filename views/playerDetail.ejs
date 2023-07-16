@@ -2,62 +2,227 @@
 <html lang="en">
 <%- include ('./patials/head') %>
     <body style="background-image: url('');background-size: cover;">
-      <div class="columns is-multiline is-mobile" style="margin-top: 80px; margin-left: 20px; margin-right: 20px;">         
-        <div class="carousel-container">
-          <div id="image-slider" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <% player.images.forEach(function(image, index) { %>
-              <div class="carousel-item <% if (index === 0) { %>active<% } %>">
-                <a href="<%= image %>" data-lightbox="image-gallery" data-title="Image <%= index %>">
-                  <img src="<%= image %>" class="d-block w-100" alt="Image <%= index %>">
-                  <div class="carousel-caption">
-                    <p class="click-text">Hãy click vào để xem tất cả ảnh</p>
-                  </div>
-                </a>
-              </div>
-              <% }) %>
+   <!-- <div class="container">
+    <div class="columns is-multiline is-mobile" style="margin-top: 80px; margin-left: 20px; margin-right: 20px;">         
+      <div class="carousel-container">
+        <div id="image-slider" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <% player.images.forEach(function(image, index) { %>
+            <div class="carousel-item <% if (index === 0) { %>active<% } %>">
+              <a href="<%= image %>" data-lightbox="image-gallery" data-title="Image <%= index %>">
+                <img src="<%= image %>" class="d-block w-100" alt="Image <%= index %>">
+                <div class="carousel-caption">
+                  <p class="click-text">Hãy click vào để xem tất cả ảnh</p>
+                </div>
+              </a>
             </div>
-            <a class="carousel-control-prev" href="#image-slider" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#image-slider" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
+            <% }) %>
+          </div>
+          <a class="carousel-control-prev" href="#image-slider" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#image-slider" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      <div class="column-detail">
+        <div class="box box-info-text">
+          Thông tin sản phẩm
+        </div>
+        <div class="card-content-detail">
+          <div class="card-content" style="line-height: 60px;">                
+            <div class="content-detail">
+              <strong>Tên</strong> : <%= player.name %>                                                                
+            </div>
+            <div class="content-detail">
+              <strong>Mô tả</strong>: <%= player.desc %>                                                                
+            </div>
+            <div class="content-detail">
+              <strong>Bảo Hành</strong> : <%= player.position %>                                                                
+            </div>
+            <div class="content-detail">
+              <strong>Số lượng</strong>: <%= player.amount %>                                                                
+            </div>
+            <div class="content-detail">
+              <strong>Gía</strong>: <%= player.price %>                                                                
+            </div>
+            <div class="content-detail">
+              <strong>Loại sản phẩm</strong>: <%= player.nation.name %>                                                                
+            </div>
+            <div class="content-detail">
+              <strong>Status</strong> : <%=player.isCaptain===true ? 'Còn hàng' : 'No' %>                                                                
+            </div>
           </div>
         </div>
-        <div class="column-detail">
-          <div class="box box-info-text">
-            Thông tin sản phẩm
+      </div> 
+    </div>
+   </div> -->
+   
+     <!-- Open Content -->
+     <section class="bg-light">
+      <div class="container pb-5">
+          <div class="row">
+       
+              <div class="col-lg-5 mt-5">
+                <% if (player.images.length > 0) { %>
+                  <div class="card mb-3">
+                    <img class="card-img img-fluid-detail" src="<%= player.images[0] %>" alt="Product Image" id="product-detail">
+                  </div>
+                <% } %>
+                  <div class="row">
+                      <!--Start Controls-->
+                      <div class="col-1 align-self-center">
+                          <a href="#multi-item-example" role="button" data-bs-slide="prev">
+                              <i class="text-dark fas fa-chevron-left"></i>
+                              <span class="sr-only">Previous</span>
+                          </a>
+                      </div>
+                      <!--End Controls-->
+
+
+                      <!--Start Carousel Wrapper-->
+                      <div id="multi-item-example" class="col-10 carousel slide carousel-multi-item" data-bs-ride="carousel">
+                          <!--Start Slides-->
+                          <div class="carousel-inner product-links-wap" role="listbox">
+
+                              <!--First slide-->
+                              <div class="carousel-item  carousel-item-detail active">
+                                  <div class="row">
+                                    <% player.images.forEach(function(image, index) { %>
+                                      <div class="col-4" >
+                                          <a href="#" class="carousel-image-link">
+                                              <img class="card-img img-fluid-detail" src="<%= image %>" alt="Product Image 1">
+                                          </a>
+                                      </div>
+                                      <% }) %>
+                                    
+                                  </div>
+                              </div>
+                              <!--/.First slide-->
+
+                              <!--Second slide-->
+                              <div class="carousel-item carousel-item-detail">
+                                  <div class="row">
+                                    <% player.images.forEach(function(image, index) { %>
+                                      <div class="col-4">
+                                          <a href="#" class="carousel-image-link">
+                                              <img class="card-img img-fluid-detail" src="<%= image %>" alt="Product Image 4">
+                                          </a>
+                                      </div>
+                                      <% }) %>
+                                  </div>
+                              </div>
+                              <!--/.Second slide-->
+                            
+                          </div>
+                          <!--End Slides-->
+                      </div>
+                      <!--End Carousel Wrapper-->
+
+
+                      <!--Start Controls-->
+                      <div class="col-1 align-self-center">
+                          <a href="#multi-item-example" role="button" data-bs-slide="next">
+                              <i class="text-dark fas fa-chevron-right"></i>
+                              <span class="sr-only">Next</span>
+                          </a>
+                      </div>
+                      <!--End Controls-->
+                  </div>
+              </div>
+              <!-- col end -->
+              <div class="col-lg-7 mt-5">
+                  <div class="card">
+                      <div class="card-body">
+                          <h1 class="h2"><%= player.name %></h1>
+                          <p class="h3 py-2"><%= player.price.toLocaleString('vi-VN') %><span>đ<span></p>
+                          <p class="py-2">
+                              <i class="fa fa-star text-warning"></i>
+                              <i class="fa fa-star text-warning"></i>
+                              <i class="fa fa-star text-warning"></i>
+                              <i class="fa fa-star text-warning"></i>
+                              <i class="fa fa-star text-secondary"></i>
+                              <span class="list-inline-item text-dark">Rating 4.8 | 36 Comments</span>
+                          </p>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                  <h6>Brand:</h6>
+                              </li>
+                              <li class="list-inline-item">
+                                  <p class="text-muted"><strong>Easy Wear</strong></p>
+                              </li>
+                          </ul>
+
+                          <h6>Mô tả:</h6>
+                          <p><%= player.desc %> </p>
+                          <ul class="list-inline">
+                              <li class="list-inline-item">
+                                  <h6>Bảo Hành :</h6>
+                              </li>
+                              <li class="list-inline-item">
+                                  <p class="text-muted"><strong><%= player.position %></strong></p>
+                              </li>
+                          </ul>
+
+                          <h6>Loại sản phẩm</h6>
+                          <ul class="list-unstyled pb-3">
+                              <li> <%= player.nation.name %> </li>
+                            
+                          </ul>
+                          <h6>Trạng thái</h6>
+                          <ul class="list-unstyled pb-3">
+                              <li><%=player.isCaptain===true ? 'Còn hàng' : 'No' %></li>
+                            
+                          </ul>
+
+                          <!-- <form action="" method="GET">
+                              <input type="hidden" name="product-title" value="Activewear">
+                              <div class="row">
+                                  <div class="col-auto">
+                                      <ul class="list-inline pb-3">
+                                          <li class="list-inline-item">Size :
+                                              <input type="hidden" name="product-size" id="product-size" value="S">
+                                          </li>
+                                          <li class="list-inline-item"><span class="btn btn-success btn-size">S</span></li>
+                                          <li class="list-inline-item"><span class="btn btn-success btn-size">M</span></li>
+                                          <li class="list-inline-item"><span class="btn btn-success btn-size">L</span></li>
+                                          <li class="list-inline-item"><span class="btn btn-success btn-size">XL</span></li>
+                                      </ul>
+                                  </div>
+                                  <div class="col-auto">
+                                      <ul class="list-inline pb-3">
+                                          <li class="list-inline-item text-right">
+                                              Quantity
+                                              <input type="hidden" name="product-quanity" id="product-quanity" value="1">
+                                          </li>
+                                          <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li>
+                                          <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
+                                          <li class="list-inline-item"><span class="btn btn-success" id="btn-plus">+</span></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                              <div class="row pb-3">
+                                  <div class="col d-grid">
+                                      <button type="submit" class="btn btn-success btn-lg" name="submit" value="buy">Buy</button>
+                                  </div>
+                                  <div class="col d-grid">
+                                      <button type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">Add To Cart</button>
+                                  </div>
+                              </div>
+                          </form> -->
+
+                      </div>
+                  </div>
+              </div>
+
+
           </div>
-          <div class="card-content-detail">
-            <div class="card-content" style="line-height: 60px;">                
-              <div class="content-detail">
-                <strong>Tên</strong> : <%= player.name %>                                                                
-              </div>
-              <div class="content-detail">
-                <strong>Mô tả</strong>: <%= player.desc %>                                                                
-              </div>
-              <div class="content-detail">
-                <strong>Bảo Hành</strong> : <%= player.position %>                                                                
-              </div>
-              <div class="content-detail">
-                <strong>Số lượng</strong>: <%= player.amount %>                                                                
-              </div>
-              <div class="content-detail">
-                <strong>Gía</strong>: <%= player.price %>                                                                
-              </div>
-              <div class="content-detail">
-                <strong>Loại sản phẩm</strong>: <%= player.nation.name %>                                                                
-              </div>
-              <div class="content-detail">
-                <strong>Status</strong> : <%=player.isCaptain===true ? 'Còn hàng' : 'No' %>                                                                
-              </div>
-            </div>
-          </div>
-        </div> 
       </div>
+  </section>
+  <!-- Close Content -->
             
                             
           <script>
@@ -68,7 +233,30 @@
               });
             });
           </script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>                    
+       <script>
+        $(document).ready(function() {
+          // Handle click on carousel image link
+          $('.carousel-image-link').click(function() {
+            var imgSrc = $(this).find('img').attr('src');
+            $('#product-detail').attr('src', imgSrc);
+          });
+        });
+      </script>
+     
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>     
+     
+     
+     <script src="../../vkbstore/assets/js/jquery-1.11.0.min.js"></script>
+     <script src="../../vkbstore/assets/js/jquery-migrate-1.2.1.min.js"></script>
+     <script src="../../vkbstore/assets/js/bootstrap.bundle.min.js"></script>
+     <script src="../../vkbstore/assets/js/templatemo.js"></script>
+     <script src="../../vkbstore/assets/js/custom.js"></script>
+     <!-- End Script -->
+ 
+     <!-- Start Slider Script -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="assets/js/slick.min.js"></script>
     </body>
-    
+    <%- include ('./patials/footer') %>
 </html>

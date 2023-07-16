@@ -13,7 +13,7 @@ const playerRouter = require("./routes/playerRouter");
 const userRouter = require("./routes/userRouter");
 require('./config/passport')(passport);
 const url = "mongodb+srv://vophuocthanha19052017:pthanh@cluster0.zdxr5zm.mongodb.net/databasevkb?retryWrites=true&w=majority";
-const url2="mongodb://127.0.0.1:27017/test3"
+// const url2="mongodb://127.0.0.1:27017/test3"
 // const port = 3000
 const connect = mongoose.connect(url);
 // mongoose.set('strictQuery',true);

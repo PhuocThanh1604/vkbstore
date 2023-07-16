@@ -45,10 +45,11 @@
 <!-- JavaScript của Slick Carousel -->
 <script src="path/to/slick.min.js"></script>
 
+
   <style>
     .header-dark {
       background: url('https://cdn.pixabay.com/photo/2015/10/12/14/59/milky-way-984050_960_720.jpg')
-        #319441;
+        #f2f2f2;
       background-size: cover;
       padding-bottom: 80px;
     }
@@ -225,17 +226,17 @@
     .header-small {
   height: 30px; /* Điều chỉnh chiều cao mong muốn */
 }
-.card-container {
+ .card-container-das {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 
-}
-.card {
+} 
+/* .card {
   width: 30vw;
   margin: 20px;
 
-}
+}  */
 
 /* CSS cho chế độ mobile */
 @media (max-width: 767px) {
@@ -345,7 +346,7 @@
   }
 }
 .carousel-inner{
-  background-color: black;
+  background-color: silver;
   color: black;
   border-radius: 4px;
 }
@@ -507,7 +508,11 @@
   max-height: 100%;
   object-fit: contain;
 }
-
+.carousel-inner .carousel-item-detail img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
 
 @media screen and (max-width: 768px) {
   .carousel-inner-list .carousel-item img {
@@ -515,13 +520,23 @@
   height: 100px; /* Kích thước chiều cao mong muốn */
 /* Giữ tỷ lệ khung hình và cắt bớt để lấp đầy khung */
 }
+.carousel-inner-list .carousel-item-detail img {
+  width: 150px; /* Kích thước chiều rộng mong muốn */
+  height: 100px; /* Kích thước chiều cao mong muốn */
+/* Giữ tỷ lệ khung hình và cắt bớt để lấp đầy khung */
+}
 }
 @media screen and (max-width: 768px) {
   .carousel-inner .carousel-item img {
-  width: 500px; /* Kích thước chiều rộng mong muốn */
-  height: 500px; /* Kích thước chiều cao mong muốn */
+  width: 250px; /* Kích thước chiều rộng mong muốn */
+  height: 250px; /* Kích thước chiều cao mong muốn */
   object-fit: none; /* Giữ tỷ lệ khung hình và cắt bớt để lấp đầy khung */
 }
+.carousel-inner .carousel-item-detail img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
 }
 .box-info-text {
   height: 60px;
@@ -603,12 +618,7 @@ box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
   border-bottom:  0.5 solid black;
 }
 
-.card-index{margin-left: 10px;
-margin-right: 10px; border: 1px solid black;
-border-radius: 10px;
-border-bottom-right-radius:5px ;
-border-bottom-left-radius:5px ;
-}
+
 
 @media screen and (max-width: 768px) {
   .columns.is-multiline {
@@ -622,11 +632,7 @@ border-bottom-left-radius:5px ;
     margin-bottom: 20px; /* Add some bottom margin for spacing */
   }
 
-  .card-index {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+
 
   .image-container-index {
     width: 100%;
@@ -674,6 +680,7 @@ border-bottom-left-radius:5px ;
 }
 
 @media screen and (max-width: 768px) {
+
   .box-register {
     width: 90%; /* Adjust the width for mobile devices */
   }
@@ -720,48 +727,75 @@ margin-top: 10px;
     margin-top: 10px;
     left: 0;
   }
-  .card-content-index .btn-info-responsive {
-    margin-top: 10px;
-    width: 100%;
  
-  }
 
 }
 
 @media screen and (max-width: 480px) {
   /* Additional mobile styles */
   .btn-info-responsive {
-    width: 100px;
+    width: 100%;
     color: yellow;
   }
-}
-.card-index {
-  /* Web styles */
-  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
+  .img-fluid{
+  width: 100%;
+  height: 200px;
 }
 
-@media screen and (max-width: 768px) {
-  /* Mobile styles */
-  .card-index {
-    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
-  }
 }
 
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+
+.fixed-size-image {
+  width: 100%;
+  height: 250px; /* Adjust the height as needed */
+  object-fit: cover;
+}
+
+.img-fluid{
+  width: 500px;
+  height: 500px;
+}
   </style>
 </head>
-
+<nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+  <div class="container text-light">
+      <div class="w-100 d-flex justify-content-between">
+          <div>
+              <i class="fa fa-envelope mx-2"></i>
+              <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">VKBStore@company.com</a>
+              <i class="fa fa-phone mx-2"></i>
+              <a class="navbar-sm-brand text-light text-decoration-none" href="tel:0909013369">0909013369</a>
+              <i class="fa-solid fa-location-dot"></i>
+              <a class="navbar-sm-brand text-light text-decoration-none" 
+              href="https://www.google.com/maps/place/387+Phan+V%C4%83n+Tr%E1%BB%8B,+Ph%C6%B0%E1%BB%9Dng+2,+Qu%E1%BA%ADn+5,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh,+Vietnam/@10.7550428,106.67446,17z/data=!3m1!4b1!4m6!3m5!1s0x31752f0285db606b:0xb301df0c8e47f2f0!8m2!3d10.7550375!4d106.6770349!16s%2Fg%2F11f_kp4ysl?entry=ttu">
+              vkbstore</a>
+          </div>
+          <div>
+              <a class="text-light" href="https://www.facebook.com/bi.asus.9" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+              <a class="text-light" href="#" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+              <a class="text-light" href="#" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
+              <a class="text-light" href="#" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
+          </div>
+      </div>
+  </div>
+</nav>
   <div class="header-dark header-small">
     <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
       <div class="container">
-        <a class="navbar-brand "style="color: yellow;" href="/">VKBSTORE</a
+        <a class="navbar-brand "style="color: green;" href="/">VKBSTORE</a
         >
         <button
           class="navbar-toggler"
           data-toggle="collapse"
           data-target="#navcol-1">
           <span class="sr-only">Toggle navigation</span
-          ><span class="navbar-toggler-icon" ></span>
+          ><span class="navbar-toggler-icon" style="background-color: #000000;" ></span>
         </button>
         <div class="collapse navbar-collapse" id="navcol-1" >
         
@@ -889,8 +923,11 @@ margin-top: 10px;
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-
-
+<script src="../../assets/js/jquery-1.11.0.min.js"></script>
+<script src="../../assets/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="../../assets/js/bootstrap.bundle.min.js"></script>
+<script src="../../assets/js/templatemo.js"></script>
+<script src="../../assets/js/custom.js"></script>
 
 
   

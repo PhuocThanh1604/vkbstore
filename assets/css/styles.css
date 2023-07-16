@@ -1,0 +1,703 @@
+
+.header-dark {
+  background: url('https://cdn.pixabay.com/photo/2015/10/12/14/59/milky-way-984050_960_720.jpg')
+    #319441;
+  background-size: cover;
+  padding-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+  .header-dark {
+    padding-bottom: 120px;
+  }
+}
+
+.header-dark .navbar {
+  background: transparent;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  .header-dark .navbar {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+}
+
+.header-dark .navbar .navbar-brand {
+  font-weight: bold;
+  color: inherit;
+
+}
+
+.header-dark .navbar .navbar-brand:hover {
+  color: #f0f0f0;
+}
+
+.header-dark .navbar .navbar-collapse span {
+  margin-top: 5px;
+}
+
+.header-dark .navbar .navbar-collapse span .login {
+  color: #d9d9d9;
+  margin-right: 0.5rem;
+  text-decoration: none;
+}
+
+.header-dark .navbar .navbar-collapse span .login:hover {
+  color: #fff;
+}
+
+.header-dark .navbar .navbar-toggler {
+  border-color: #747474;
+}
+
+.header-dark .navbar .navbar-toggler:hover,
+.header-dark .navbar-toggler:focus {
+  background: none;
+}
+
+.header-dark .navbar .navbar-toggler {
+  color: #eee;
+}
+
+.header-dark .navbar .navbar-collapse,
+.header-dark .navbar .form-inline {
+  border-color: #636363;
+}
+
+@media (min-width: 992px) {
+  .header-dark .navbar.navbar .navbar-nav .nav-link {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+}
+
+.header-dark .navbar.navbar-dark .navbar-nav .nav-link {
+  color: #454739;
+}
+
+.header-dark .navbar.navbar-dark .navbar-nav .nav-link:focus,
+.header-dark .navbar.navbar-dark .navbar-nav .nav-link:hover {
+  color: #3eb5f1 !important;
+  background-color: transparent;
+}
+
+.header-dark .navbar .navbar-nav > li > .dropdown-menu {
+  margin-top: -5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.header-dark .navbar .dropdown-menu .dropdown-item:focus,
+.header-dark .navbar .dropdown-menu .dropdown-item {
+  line-height: 2;
+  font-size: 14px;
+  color: #454739;
+ 
+}
+
+.header-dark .navbar .dropdown-menu .dropdown-item:focus,
+.header-dark .navbar .dropdown-menu .drodown-item:hover {
+  background: #283439;
+ border-radius: 20px;
+}
+
+.header-dark .navbar .action-button,
+.header-dark .navbar .action-button:active {
+  background: #208f8f;
+  border-radius: 20px;
+  font-size: inherit;
+  color: #fff;
+  box-shadow: none;
+  border: none;
+  text-shadow: none;
+  padding: 0.5rem 0.8rem;
+  transition: background-color 0.25s;
+}
+
+.header-dark .navbar .action-button:hover {
+  background: #269d9d;
+}
+
+.header-dark .navbar .form-inline label {
+  color: #ccc;
+}
+
+.header-dark .navbar .form-inline .search-field {
+  display: inline-block;
+  width: 80%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  color: #ccc;
+  box-shadow: none;
+  color: inherit;
+  transition: border-bottom-color 0.3s;
+}
+
+.header-dark .navbar .form-inline .search-field:focus {
+  border-bottom: 1px solid #ccc;
+}
+
+.header-dark .hero {
+  margin-top: 60px;
+}
+
+@media (min-width: 768px) {
+  .header-dark .hero {
+    margin-top: 20px;
+  }
+}
+
+.header-dark .hero h1 {
+  color: #fff;
+  font-family: 'Bitter', serif;
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+  .header-dark .hero h1 {
+    margin-bottom: 50px;
+    line-height: 1.5;
+  }
+}
+
+.header-dark .hero .embed-responsive iframe {
+  background-color: #666;
+}
+.header-small {
+height: 30px; /* Điều chỉnh chiều cao mong muốn */
+}
+.card-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+
+}
+.card {
+width: 30vw;
+margin: 20px;
+
+}
+
+/* CSS cho chế độ mobile */
+@media (max-width: 767px) {
+
+.card-container {
+display: flex;
+ flex-wrap: wrap; 
+ justify-content: center;
+flex-direction: column; 
+justify-content: center;
+
+
+}
+.card-content {
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+
+}
+.content{
+display: none;
+}
+.column{
+width: 90vw;
+margin-bottom: 20px;
+margin-top: 10px;
+}
+}
+/* CSS mặc định cho bảng */
+#mytable {
+width: 1000px;
+}
+
+/* CSS responsive cho kích thước màn hình nhỏ hơn hoặc bằng 768px */
+@media screen and (max-width: 768px) {
+#mytable {
+width: 100%;
+}
+
+#mytable th,
+#mytable td {
+padding: 10px;
+font-size: 14px;
+}
+}
+
+@media screen and (min-width: 600px) {
+#search-form {
+  margin-left: 200px;
+  margin-right: 200px;
+}
+}
+
+/* CSS cho màn hình nhỏ hơn hoặc bằng 600px */
+@media screen and (max-width: 600px) {
+#search-form {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+}
+
+@media screen and (max-width: 600px) {
+/* Điều chỉnh giao diện khi độ rộng màn hình nhỏ hơn hoặc bằng 768px */
+.box {
+right: -100px;
+}
+
+.custom-box .field-label {
+display: none;
+}
+}
+
+
+
+/* CSS responsive khi độ rộng màn hình nhỏ hơn hoặc bằng 768px */
+@media screen and (max-width: 768px) {
+.responsive-button.button-create {
+margin-bottom: 10px;
+left: 20px;
+margin-top: -50px;
+}
+}
+
+/* CSS responsive cho .responsive-button khi độ rộng màn hình nhỏ hơn hoặc bằng 480px */
+@media screen and (max-width: 480px) {
+.responsive-button.button-create {
+margin-bottom: 10px;
+left: 10px;
+margin-top: -50px;
+}
+}
+/* CSS responsive khi độ rộng màn hình nhỏ hơn hoặc bằng 768px */
+@media screen and (max-width: 768px) {
+.responsive-button-category.button-create-category {
+margin-bottom: 20px;
+left: 20px;
+margin-top: 30px;
+}
+}
+
+/* CSS responsive cho .responsive-button khi độ rộng màn hình nhỏ hơn hoặc bằng 480px */
+@media screen and (max-width: 480px) {
+.responsive-button-category.button-create-category {
+margin-bottom: 20px;
+left: 10px;
+margin-top: 30px;
+}
+}
+.carousel-inner{
+background-color: black;
+color: black;
+border-radius: 4px;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+background-color: white;
+color: white;
+}
+/* CSS responsive cho màn hình nhỏ hơn hoặc bằng 768px */
+@media screen and (max-width: 768px) {
+
+
+h1 {
+font-size: 30px;
+margin-bottom: 10px;
+
+}
+
+form.container {
+margin-top: 5px;
+}
+
+.field-label.is-normal {
+padding-bottom: 5px;
+}
+
+.field.is-horizontal {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.field.is-horizontal .field-label.is-normal,
+.field.is-horizontal .field-body {
+width: 100%;
+}
+
+.field.is-horizontal .field-body .field.is-narrow {
+margin-bottom: 10px;
+}
+
+.field.is-horizontal .field-body .control {
+width: 100%;
+}
+
+.field.is-horizontal .field-body .select.is-fullwidth {
+width: 100%;
+}
+
+.field.is-horizontal .field-body .select.is-fullwidth select {
+width: 100%;
+}
+
+.field.is-horizontal .field-body .textarea {
+width: 100%;
+}
+
+.field.is-horizontal .field-body .checkbox {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.field.is-horizontal .field-body .checkbox input[type="checkbox"] {
+margin-right: 5px;
+}
+
+.field.is-horizontal .field-body .button.is-primary {
+margin-left: 0;
+}
+}
+
+/* CSS responsive cho màn hình nhỏ hơn hoặc bằng 480px */
+@media screen and (max-width: 480px) {
+h1 {
+font-size: 25px;
+margin-bottom: 5px;
+}
+
+.field.is-horizontal .field-body .field.is-narrow {
+margin-bottom: 5px;
+}
+.status{
+margin-top: -42px;
+color: white;
+}
+}
+
+.container-nav{
+background-color: #f2f2f2; 
+border-radius: 15px;
+border: 1.5px solid red;
+color: black;
+
+}
+.container-nav-home{
+background-color: #f2f2f2; 
+border-radius: 15px;
+border: 1.5px solid red;
+color: black;
+margin-right: 5px;
+}
+.container-nav-user {
+background-color: #f2f2f2; 
+border-radius: 15px;
+border: 1.5px solid red;
+color: black;
+}
+@media screen and (max-width: 480px) {
+.container-nav{
+background-color: #f2f2f2; 
+border-radius: 15px;
+border: 1.5px solid red;
+color: black;
+}
+.container-nav-home{
+background-color: #f2f2f2; 
+border-radius: 15px;
+border: 1.5px solid red;
+color: black;
+}
+}
+@media screen and (max-width: 768px) {
+.container-nav{
+background-color: #f2f2f2;
+margin-top: 10px;
+width: 100px;
+border-radius: 15px;
+display: flex;
+justify-content: center;
+align-items: center;    border: 1.5px solid red;
+color: black;
+}
+.container-nav-home{
+background-color: #f2f2f2;
+margin-top: 10px;
+width: 100px;
+border-radius: 15px;
+display: flex;
+justify-content: center;
+align-items: center;
+border: 1.5px solid red;
+color: black;
+}
+.container-nav-user{
+background-color: #f2f2f2;
+margin-top: 10px;
+width: 100px;
+border-radius: 15px;
+display: flex;
+justify-content: center;
+align-items: center;
+border: 1.5px solid red;
+color: black;
+}
+}
+.carousel-inner .carousel-item img {
+max-width: 100%;
+max-height: 100%;
+object-fit: contain;
+}
+
+
+@media screen and (max-width: 768px) {
+.carousel-inner-list .carousel-item img {
+width: 150px; /* Kích thước chiều rộng mong muốn */
+height: 100px; /* Kích thước chiều cao mong muốn */
+/* Giữ tỷ lệ khung hình và cắt bớt để lấp đầy khung */
+}
+}
+@media screen and (max-width: 768px) {
+.carousel-inner .carousel-item img {
+width: 500px; /* Kích thước chiều rộng mong muốn */
+height: 500px; /* Kích thước chiều cao mong muốn */
+object-fit: none; /* Giữ tỷ lệ khung hình và cắt bớt để lấp đầy khung */
+}
+}
+.box-info-text {
+height: 60px;
+width: 10vh;
+border-radius: 16px;
+text-align: center;
+color: white;
+background-color: blueviolet;
+box-shadow: 0 4px 8px rgba(247, 5, 219, 0.2);
+
+}
+
+
+.card-content-detail{border: 1.5px solid black;
+border-radius: 6px;
+color: #020af8;}
+
+.carousel-container {
+width: 500px; /* Kích thước chiều rộng mong muốn */
+height: 500px; /* Kích thước chiều cao mong muốn */
+/* Các thuộc tính CSS khác cho div */
+border: 1px solid black;
+border-radius: 4px;
+box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
+}
+@media screen and (max-width: 768px) {
+.box-info-text {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 200px;
+height: 50px;
+margin-top: 100px;
+}
+
+.card-content-detail {
+display: flex; /* Use flexbox to arrange content vertically */
+flex-direction: column; /* Arrange content in a column */
+padding: 10px; /* Adjust the spacing between elements on mobile devices */
+line-height: 30px; /* Adjust the line height of the content on mobile devices */
+color: #454739;
+
+box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
+}
+
+.card-content {
+color: #283439;
+
+}
+
+.carousel-container {
+width: 360px; /* Kích thước chiều rộng mong muốn */
+height: 360px; /* Kích thước chiều cao mong muốn */
+/* Các thuộc tính CSS khác cho div */
+margin-bottom: 50px;
+}
+}
+.box-info-text {
+width: 280px;
+height: 60px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.column-detail{margin-left: 20px;font-size: larger;align-content: center; }
+
+.image-container-index {
+width: 100%; /* Set the width to 100% to match the card width */
+height: 300px; /* Set the desired height */
+}
+
+.image-container-index img {
+width: 100%;
+height:300px;
+object-fit: cover;
+border-top-left-radius:10px ;
+border-top-right-radius:10px ;
+border-bottom:  0.5 solid black;
+}
+
+.card-index{margin-left: 10px;
+margin-right: 10px; border: 1px solid black;
+border-radius: 10px;
+border-bottom-right-radius:5px ;
+border-bottom-left-radius:5px ;
+}
+
+@media screen and (max-width: 768px) {
+.columns.is-multiline {
+flex-direction: column;
+align-items: center;
+}
+
+.column.is-one-quarter {
+width: 100%;
+max-width: 500px; /* Set the maximum width to 500px */
+margin-bottom: 20px; /* Add some bottom margin for spacing */
+}
+
+.card-index {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.image-container-index {
+width: 100%;
+height: 0;
+padding-bottom: 100%; /* Maintain a square aspect ratio */
+position: relative;
+border-bottom: 1px solid black;
+}
+
+.image-container-index img {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.card-content-index {
+flex-grow: 1; /* Allow the content to grow vertically */
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 20px;
+text-align: center;
+
+}
+}
+.card-container-index{
+border: 1px solid black;
+}
+.container-register {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100vw;
+height: 100vh;
+background-size: cover;
+background-image: url(https://www.pngmagic.com/product_images/ecommerce-website-banner.jpg);
+}
+
+.box-register {
+width: 80%; /* Increase the width of the form */
+max-width: 600px; /* Set a maximum width to maintain readability */
+}
+
+@media screen and (max-width: 768px) {
+.box-register {
+width: 90%; /* Adjust the width for mobile devices */
+}
+}
+
+
+.new-nation-button {
+position: fixed;
+margin-top: 10px;
+margin-left: 200px;
+margin-bottom: 800px;
+}
+.new-nation-button {
+text-decoration: none;
+}
+
+
+@media screen and (max-width: 768px) {
+.new-nation-button {
+/* Mobile styles */
+position: static;
+margin-top: 10px;
+margin-bottom: 20px;
+
+
+}
+}
+
+.new-nation-button {
+text-decoration: none;
+}
+.btn-info {
+/* Web styles */
+width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+/* Mobile styles */
+.card-content-index {
+text-align: center;
+left: 0;
+}
+.card-content-index .media-content {
+margin-top: 10px;
+left: 0;
+}
+.card-content-index .btn-info-responsive {
+margin-top: 10px;
+width: 100%;
+
+}
+
+}
+
+@media screen and (max-width: 480px) {
+/* Additional mobile styles */
+.btn-info-responsive {
+width: 100px;
+color: yellow;
+}
+}
+.card-index {
+/* Web styles */
+box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+/* Mobile styles */
+.card-index {
+box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
+}
+}
+
+
