@@ -19,33 +19,7 @@
             </div>
               <% } %>
     </div>
-   
-    <!-- <div class="columns is-multiline" >
-      <% players.forEach(function(player) { %>
-      <div class="column is-one-quarter">
-        <div class="card-index">
-          <div class="image-container-index">
-            <div id="image-slider">
-              <div>
-                <a href="<%= player.images[0] %>" data-lightbox="image-gallery" data-title="Image 0">
-                  <img src="<%= player.images[0] %>" class="d-block w-100" alt="Image 0">
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="card-content-index">
-            <div class="media">
-              <div class="media-content">
-                <p class="title is-3 ml-4"><%= player.name %></p>
-                <p class="title is-4 ml-4" style="color: red;"><%= player.price.toLocaleString('vi-VN') %><span>đ</span></p>
-              </div>
-            </div>
-            <a href="/players/<%=player.id%>" class="btn btn-info btn-info-responsive" >Thông tin chi tiết</a>
-          </div>
-        </div>
-      </div>
-      <% }) %>
-    </div> -->
+
     
     <div id="template-mo-zay-hero-carousel" class="carousel slide bg-light text-dark" data-bs-ride="carousel">
       <ol class="carousel-indicators">
@@ -63,12 +37,12 @@
               <div class="col-lg-6 mb-0 d-flex align-items-center">
                 <div class="text-align-left align-self-center">
                   <h1 class="h1 text-success"><b>SHOP</b> VKB</h1>
-                  <h3 class="h2">Tiny and Perfect eCommerce Template</h3>
+                  <h3 class="h2">Hiệu suất mạnh mẽ, nâng cấp linh hoạt, trải nghiệm tối ưu.</h3>
                   <p>
                     Phù hợp định hiệu năng chạy cực kì linh hoạt các phần mềm văn phòng (word, excel) lướt Website cực êm, học tập cũng giống như thư giãn (màn hình sắc nét cùng hệ thống loa to rõ ràng) 
-                    <a rel="sponsored" class="text-success" href="https://stories.freepik.com/" target="_blank">Freepik Stories</a>,
+                    <!-- <a rel="sponsored" class="text-success" href="https://stories.freepik.com/" target="_blank">Freepik Stories</a>,
                     <a rel="sponsored" class="text-success" href="https://unsplash.com/" target="_blank">Unsplash</a> and
-                    <a rel="sponsored" class="text-success" href="https://icons8.com/" target="_blank">Icons 8</a>.
+                    <a rel="sponsored" class="text-success" href="https://icons8.com/" target="_blank">Icons 8</a>. -->
                   </p>
                 </div>
               </div>
@@ -83,11 +57,12 @@
               </div>
               <div class="col-lg-6 mb-0 d-flex align-items-center">
                 <div class="text-align-left">
-                  <h1 class="h1">Proident occaecat</h1>
-                  <h3 class="h2">Aliquip ex ea commodo consequat</h3>
-                  <p>
-                    You are permitted to use this Zay CSS template for your commercial websites.
-                    You are <strong>not permitted</strong> to re-distribute the template ZIP file on any kind of template collection websites.
+                  <h1 class="h1 ">Hiệu suất mạnh mẽ</h1>
+                  <h3 class="h2 ">Cộng đồng gaming đa dạng và thú vị</h3>
+                  <p class="text-light">
+                    Hiệu suất mạnh mẽ: Máy tính bàn thường có khả năng xử lý <strong>mạnh mẽ</strong>  với các bộ vi xử lý cao cấp, card đồ họa mạnh mẽ và dung lượng bộ nhớ lớn. 
+                    
+                    Điều này cho phép máy tính bàn xử lý các tác vụ nặng như đồ họa, game, xử lý video và công việc chuyên nghiệp một cách mượt mà và hiệu quả.
                   </p>
                 </div>
               </div>
@@ -102,11 +77,10 @@
               </div>
               <div class="col-lg-6 mb-0 d-flex align-items-center">
                 <div class="text-align-left">
-                  <h1 class="h1">Full Bộ Máy Tính</h1>
-                  <h3 class="h2">Hiện đại đầy hiệu năng</h3>
+                  <h1 class="h1 text-muted">Full Bộ Máy Tính</h1>
+                  <h3 class="h2 text-overflow">Hiện đại đầy hiệu năng</h3>
                   <p>
-                    We bring you 100% free CSS templates for your websites.
-                    If you wish to support TemplateMo, please make a small contribution via PayPal or tell your friends about our website. Thank you.
+                    Giá trị và khả năng tùy chỉnh: Máy tính bàn thường có giá trị tốt hơn so với các thiết bị di động cùng cấu hình tương tự. Ngoài ra, người dùng có thể tùy chỉnh và xây dựng một chiếc máy tính bàn phù hợp với nhu cầu và ngân sách của mình. Thank you.
                   </p>
                 </div>
               </div>
@@ -122,13 +96,60 @@
       </a>
     </div>
     
-    
-    
+ 
     <!-- End Banner Hero -->
 
         <!-- Start Featured Product -->
         <section class="bg-light">
+          <!--Start Filter-->
+        
+          <div class="field is-horizontal" style="margin-top: 10px;">
+            <div class="field-label is-normal">
+              <label class="label">Bảo Hành</label>
+            </div>
+            <div class="field-body">
+              <div class="field is-narrow">
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select id="filter-position">
+                      <option value="">Lọc theo bảo hành</option>
+                      <% for (let position of positionList) { %>
+                      <option value="<%= position.name %>">
+                        <%= position.name %>
+                      </option>
+                      <% } %>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Loại sản phẩm</label>
+            </div>
+            <div class="field-body">
+              <div class="field is-narrow">
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select id="filter-nation">
+                      <option value="">Lọc theo loại sản phẩm</option>
+                      <% for (let nation of nationsList) { %>
+                      <option value="<%= nation._id %>">
+                        <%= nation.name %>
+                      </option>
+                      <% } %>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <!--End Filter-->
+        
           <div class="container py-5">
+        
             <div class="text-center py-3">
               <div class="col-lg-6 m-auto">
                 <h1 class="h1">Featured Product</h1>
@@ -138,24 +159,25 @@
                 </p>
               </div>
             </div>
-            <div class="row">
-              <% players.forEach(function(player) { %>
-                <div class="col-12 col-md-2 mb-4">
-                  <div class="card h-100">
-                    <a href="/players/<%=player.id%>">
-                      <img src="<%= player.images[0] %>" class="card-img-top fixed-size-image" alt="...">
-                    </a>
-                    <div class="card-body">
-                      <div class="player-info-container">
-
-                          <% if (player.name.length > 20) { %>
-                            <a href="#" class="h4 text-decoration-none text-dark" title="<%= player.name %>">
-                              <%= player.name.substring(0, 10) + '...' %>
-                            </a>
-                          <% } else { %>
-                            <a href="#" class="h3 text-decoration-none text-dark"><%= player.name %></a>
-                          <% } %>
-                          <p class="h4 py-2 "style="color:red"><%= player.price.toLocaleString('vi-VN') %><span>đ<span></p>
+        
+            <div class="row" id="product-list">
+              <% players.forEach(function(player, index) { %>
+              <div class="col-12 col-md-2 mb-4" data-position="<%= player.position %>" data-nationid="<%= player.nation._id %>">
+                <div class="card h-100">
+                  <a href="/players/<%=player.id%>">
+                    <img src="<%= player.images[0] %>" class="card-img-top fixed-size-image" alt="...">
+                  </a>
+                  <div class="card-body">
+                    <div class="player-info-container">
+                      <% if (player.name.length > 10) { %>
+                      <a href="#" class="h4 text-decoration-none text-dark" title="<%= player.name %>">
+                        <%= player.name.substring(0, 10) + '...' %>
+                      </a>
+                      <% } else { %>
+                      <a href="#" class="h3 text-decoration-none text-dark"><%= player.name %></a>
+                      <% } %>
+                      <p class="h4 py-2 " style="color:red"><%= player.price.toLocaleString('vi-VN') %><span>đ<span>
+                        </p>
                         <ul class="list-unstyled d-flex justify-content-between">
                           <li>
                             <i class="text-warning fa fa-star"></i>
@@ -165,33 +187,153 @@
                             <i class="text-warning fa fa-star"></i>
                           </li>
                         </ul>
-                      
                       </div>
-                     
+                      <td style="padding-top: 60px"><%= player.nation.name %></td>
                     </div>
-                    <a href="/players/<%=player.id%>" class="btn btn-info btn-info-responsive mt-auto">Thông tin chi tiết</a>
+                    <a href="/players/<%=player.id%>" class="btn btn-info btn-info-responsive mt-auto">Thông tin chi
+                      tiết</a>
                   </div>
-                  
                 </div>
-              <% }) %>
+                <% }) %>
+              </div>
+        
+              <div class="container py-3">
+                <ul class="pagination justify-content-center" id="pagination"></ul>
+              </div>
             </div>
-            
-          </div>
-        </section>
+          </section>
+        
+
         
         
       <!-- End Featured Product -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        lightbox.option({
-          'resizeDuration': 200,
-          'wrapAround': true
-        });
-      });
-
-    </script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+      // Lắng nghe sự kiện "change" trên các dropdown filter
+      document.getElementById('filter-position').addEventListener('change', filterProducts);
+      document.getElementById('filter-nation').addEventListener('change', filterProducts);
+  
+      function filterProducts() {
+        var selectedPosition = document.getElementById('filter-position').value;
+        var selectedNation = document.getElementById('filter-nation').value;
+        var productList = document.getElementById('product-list');
+        var products = productList.getElementsByClassName('col-12');
+  
+        // Lặp qua danh sách sản phẩm và ẩn/hiện sản phẩm dựa trên giá trị đã chọn
+        for (var i = 0; i < products.length; i++) {
+          var product = products[i];
+          var position = product.getAttribute('data-position');
+          var nationId = product.getAttribute('data-nationid');
+  
+          var shouldShow = (selectedPosition === '' || position === selectedPosition) &&
+            (selectedNation === '' || nationId === selectedNation);
+  
+          product.style.display = shouldShow ? 'block' : 'none';
+        }
+      }
+    </script>
+<script>
+  var players = JSON.parse('<%= JSON.stringify(players) %>');
+  var itemsPerPage = 6;
+  var currentPage = 1;
+  var totalPages = Math.ceil(players.length / itemsPerPage);
+
+  // Lắng nghe sự kiện "change" trên các dropdown filter
+  document.getElementById('filter-position').addEventListener('change', filterProducts);
+  document.getElementById('filter-nation').addEventListener('change', filterProducts);
+
+  function renderPagination() {
+    var pagination = document.getElementById('pagination');
+    pagination.innerHTML = '';
+
+    // Tạo nút Previous (trang trước)
+    var prevButton = document.createElement('li');
+    prevButton.classList.add('page-item');
+    var prevLink = document.createElement('a');
+    prevLink.classList.add('page-link');
+    prevLink.innerText = 'Previous';
+    prevButton.appendChild(prevLink);
+    pagination.appendChild(prevButton);
+
+    // Tạo các nút trang
+    for (var i = 1; i <= totalPages; i++) {
+      var pageButton = document.createElement('li');
+      pageButton.classList.add('page-item');
+      var pageLink = document.createElement('a');
+      pageLink.classList.add('page-link');
+      pageLink.innerText = i;
+      pageButton.appendChild(pageLink);
+      pagination.appendChild(pageButton);
+    }
+
+    // Tạo nút Next (trang tiếp theo)
+    var nextButton = document.createElement('li');
+    nextButton.classList.add('page-item');
+    var nextLink = document.createElement('a');
+    nextLink.classList.add('page-link');
+    nextLink.innerText = 'Next';
+    nextButton.appendChild(nextLink);
+    pagination.appendChild(nextButton);
+
+    // Lắng nghe sự kiện click trên các nút trang
+    pagination.addEventListener('click', function (event) {
+      var target = event.target;
+      if (target.tagName === 'A') {
+        var page = parseInt(target.innerText);
+        if (!isNaN(page)) {
+          currentPage = page;
+          renderProducts();
+          scrollToTop();
+        } else if (target.innerText === 'Previous') {
+          if (currentPage > 1) {
+            currentPage--;
+            renderProducts();
+            scrollToTop();
+          }
+        } else if (target.innerText === 'Next') {
+          if (currentPage < totalPages) {
+            currentPage++;
+            renderProducts();
+            scrollToTop();
+          }
+        }
+      }
+    });
+  }
+
+  function renderProducts() {
+    var productList = document.getElementById('product-list');
+    productList.innerHTML = '';
+
+    var startIndex = (currentPage - 1) * itemsPerPage;
+    var endIndex = Math.min(startIndex + itemsPerPage, players.length);
+
+    for (var i = startIndex; i < endIndex; i++) {
+      var player = players[i];
+      var playerDiv = document.createElement('div');
+      playerDiv.classList.add('col-12', 'col-md-2', 'mb-4');
+      playerDiv.setAttribute('data-position', player.position);
+      playerDiv.setAttribute('data-nationid', player.nation._id);
+
+      // Tạo nội dung của playerDiv
+      // ...
+
+      productList.appendChild(playerDiv);
+    }
+  }
+
+  // Hàm scrollToTop để cuộn lên đầu trang khi chuyển trang
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+
+  renderProducts();
+  renderPagination();
+</script>
   </body>
   <%- include ('./patials/footer') %>
 </html>

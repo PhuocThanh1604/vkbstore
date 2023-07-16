@@ -7,7 +7,6 @@
       background-image: url('');
       background-size: cover;
     ">
-    
     <% if(error_msg !='' ){ %>
     <div
       class="notification is-danger is-light"
@@ -44,7 +43,7 @@
         </header>
         <section class="modal-card-body">
     
-          <form  method="post" action="/players" enctype="multipart/form-data">
+          <form id="product-form" method="post" action="/players" enctype="multipart/form-data">
             <div class="field is-horizontal">
               <div class="field-label is-normal">
                 <label class="label">Tên sản phẩm</label>
@@ -82,9 +81,9 @@
                           <span class="file-icon">
                             <i class="fas fa-upload"></i>
                           </span>
-                          <span class="file-label"> Choose a file… </span>
+                          <span class="file-label"> Hãy chọn hình ảnh ... </span>
                         </span>
-                        <span class="file-name"> No file selected </span>
+                        <span class="file-name"> Không có hình ảnh</span>
                       </label>
                     </div>
                   </div>
@@ -208,11 +207,11 @@
             <div class="field is-horizontal" style="margin-left: 120px">
               <div class="field-body">
                 <div class="field">
-                  <div class="control">
+                  <div class="control" >
                     <button
                       class="button is-primary"
                       type="submit"
-                      style="font-weight: 700">
+                      style="font-weight: 700" >
                       Tạo sản phẩm
                     </button>
                   </div>
@@ -220,9 +219,11 @@
               </div>
             </div>
           </form>
+ 
         </section>
       </div>
     </div>
+
     <form
     id="search-form" style="margin-top: 10px;">
       <p class="control has-icons-left">
@@ -236,6 +237,8 @@
         </span>
       </p>
     </form>
+
+    <!--Fillter start-->
     <div class="custom-box">
          <div class="box" style="background-color: hsl(171, 100%, 41%); padding: 20px; margin-top: 10px; margin-left: 200px; max-width: 400px; margin-bottom: 10px;">
         <div style="font-size: 20px; font-weight: 700">
@@ -283,6 +286,9 @@
         </div>
       </div>
     </div>
+ <!--Fillter startend-->
+
+
     <a class="button is-primary button-create responsive-button" style=" text-decoration: none; margin-left: 6px;" onClick="document.querySelector('#popup').classList.add('is-active')">
       Tạo mới sản phẩm
     </a>
@@ -332,10 +338,25 @@
                 
                 
               </td>
-              <td style="padding-top: 60px"><%= player.name %></td>
-              <td style="padding-top: 60px"><%= player.desc %></td>
+              <% if (player.name.length > 16) { %>
+                <td style="padding-top: 60px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="<%= player.name %>">
+                  <%= player.name.substring(0, 16) + '...' %>
+                </td>
+              <% } else { %>
+                <td style="padding-top: 60px;"><%= player.name %></td>
+              <% } %>
+              
+              <% if (player.desc.length > 50) { %>
+                <td style="padding-top: 60px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="<%= player.desc %>">
+                  <%= player.desc.substring(0, 50) + '...' %>
+                </td>
+              <% } else { %>
+                <td style="padding-top: 60px;"><%= player.desc %></td>
+              <% } %>
               <td style="padding-top: 60px"><%= player.position %></td>
-              <td style="padding-top: 60px"><%= player.price %></td>
+              <td style="padding-top: 60px">
+                <%= player.price.toLocaleString('vi-VN') %> đ
+              </td>
               <td style="padding-top: 60px"><%= player.amount %></td>
               <td style="padding-top: 60px"><%= player.nation.name %></td>
               <td style="padding-top: 60px">
@@ -344,18 +365,17 @@
               <td>
                 <div class="buttons">
                   <a href="/players/edit/<%=player.id %>">
-                    <button class="btn btn-primary" style="margin: 10px">
-                      Edit
+                    <button class="btn btn-primary" style="margin: 5px">
+                      <i class="fas fa-edit"></i> 
                     </button>
                   </a>
-                  <a
-                    href="/players/delete/<%=player.id %>"
-                    onclick="return confirm('Are you sure ???')">
-                    <button class="btn btn-danger" style="margin: 10px">
-                      Delete
+                  <a href="/players/delete/<%=player.id %>" onclick="return confirm('Are you sure?')">
+                    <button class="btn btn-danger" style="margin: 5px">
+                      <i class="fas fa-trash"></i>
                     </button>
                   </a>
                 </div>
+                
               </td>
             </tr>
             <% }) %>
@@ -363,6 +383,8 @@
         </table>
       </div>
     </div>
+
+
     <div id="pagination">
       <nav
         class="pagination is-centered"
@@ -381,6 +403,8 @@
         </ul>
       </nav>
     </div>
+
+
   </body>
   <script>
     // Lấy đối tượng table
@@ -389,6 +413,7 @@
     // Xử lý sự kiện khi người dùng nhập từ khóa tìm kiếm
     const searchKeyword = document.querySelector('#search-keyword');
     const filterPosition = document.querySelector('#filter-position');
+    console.log(filterPosition)
     const filterNation = document.querySelector('#filter-nation');
     filterPosition.addEventListener('change', (event) => {
       const value = event.target.value;
@@ -737,7 +762,24 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   </script>
-  
+<script>
+  const form = document.getElementById('product-form');
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent form submission
+
+    // Submit the form
+    form.submit();
+  });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const success = urlParams.get('success');
+    if (success) {
+      alert('Tạo sản phẩm thành công!');
+    }
+  });
+</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick.min.js"></script>

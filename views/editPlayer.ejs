@@ -2,13 +2,12 @@
 <html lang="en">
 <%- include ('./patials/head') %>
 <body >
-    
-    <div class="container" >
+    <div class="container" style="margin-bottom: 10px;" >
         <h1 style="text-align: center; margin-top: 100px; font-size: 40px; font-weight: 500; margin-bottom: 20px;">Chỉnh sửa sản phẩm</h1>
         <% if(error_msg != ''){ %>
             <%= error_msg %>
         <% } %>
-        <form method="post" class="container is-max-desktop" style="margin-top: 10px;" enctype="multipart/form-data">
+        <form method="post"id="product-form" class="container is-max-desktop" style="margin-top: 10px;" enctype="multipart/form-data">
             <div class="field is-horizontal">
                 <div class="field-label is-normal">
                     <label class="label">Tên sản phẩm</label>
@@ -48,11 +47,11 @@
                                             <i class="fas fa-upload"></i>
                                         </span>
                                         <span class="file-label">
-                                            Choose a file…
+                                           chọn hình ảnh...
                                         </span>
                                     </span>
                                     <span class="file-name">
-                                        No file selected
+                                      không có hình ảnh 
                                     </span>
                                 </label>
                             </div>
@@ -84,18 +83,20 @@
                     </div>
                 </div>
             </div>
+          
             <div class="field is-horizontal">
                 <div class="field-label is-normal">
-                    <label class="label">Gía</label>
+                  <label class="label">Giá</label>
                 </div>
                 <div class="field-body">
-                    <div class="field is-narrow">
-                        <div class="control">
-                            <input class="input is-info" name="price" required min="0" type="number" value="<%= player.price %>">
-                        </div>                    
+                  <div class="field is-narrow">
+                    <div class="control">
+                      <input class="input is-info" name="price" required min="0" type="number"value="<%= player.price %>">
                     </div>
+                  </div>
                 </div>
-            </div>
+              </div>
+              
             <div class="field is-horizontal">
                 <div class="field-label is-normal">
                     <label class="label">Số lượng</label>
@@ -179,6 +180,9 @@
                     </div>
                 </div>
             </div>
+          
+               
+        
         </form>
     </div>
     <script>
@@ -197,6 +201,24 @@
             }
         });
     </script>
+    <script>
+        const form = document.getElementById('product-form');
+      
+        form.addEventListener('submit', (event) => {
+          event.preventDefault(); // Prevent form submission
+      
+          // Submit the form
+          form.submit();
+        });
+      
+        window.addEventListener('DOMContentLoaded', () => {
+          const urlParams = new URLSearchParams(window.location.search);
+          const success = urlParams.get('success');
+          if (success) {
+            alert('Tạo sản phẩm thành công!');
+          }
+        });
+      </script>
     
 </body>
 <%- include ('./patials/footer') %>

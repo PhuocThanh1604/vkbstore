@@ -337,7 +337,9 @@ class PlayerController {
       }
   
       await player.save();
+      req.flash('success', 'true'); 
       return res.redirect('/players');
+   
     } catch (error) {
       console.error(error);
       req.flash('error_msg', 'Server Error');
@@ -463,6 +465,7 @@ class PlayerController {
     //   } else {
     Players.updateOne({ _id: req.params.playerId }, data)
       .then(() => {
+        req.flash('success', 'true'); 
         res.redirect('/players');
       })
       .catch((err) => {

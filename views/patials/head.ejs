@@ -33,7 +33,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
   <link
     rel="icon"
-    href="https://cdn-icons-png.flaticon.com/512/2292/2292038.png"
+    href="https://res.cloudinary.com/drvrfmcji/image/upload/v1689326079/logo/z4515583621293_00163928eede855435a233d1321af490_qljezh.jpg"
     type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="styles.css">
 <!-- CSS của Slick Carousel -->
@@ -82,7 +82,9 @@
       color: inherit;
 
     }
-
+    .navbar-brand img{
+      border-radius: 10px;
+    }
     .header-dark .navbar .navbar-brand:hover {
       color: #f0f0f0;
     }
@@ -105,7 +107,9 @@
       border-color: #747474;
     }
 
-    .header-dark .navbar .navbar-toggler:hover,
+    .header-dark 
+    .login-user
+    .navbar .navbar-toggler:hover,
     .header-dark .navbar-toggler:focus {
       background: none;
     }
@@ -131,8 +135,11 @@
     }
 
     .header-dark .navbar.navbar-dark .navbar-nav .nav-link:focus,
-    .header-dark .navbar.navbar-dark .navbar-nav .nav-link:hover {
-      color: #3eb5f1 !important;
+    .header-dark .navbar.navbar-dark
+    .navbar-end
+    .login-user
+    .navbar-nav .nav-link:hover {
+      color: #59ab6e !important;
       background-color: transparent;
     }
 
@@ -152,9 +159,11 @@
     }
 
     .header-dark .navbar .dropdown-menu .dropdown-item:focus,
-    .header-dark .navbar .dropdown-menu .drodown-item:hover {
-      background: #283439;
-     border-radius: 20px;
+    .header-dark .navbar .dropdown-menu
+    .login-user
+    .drodown-item:hover {
+      background: #528e68;
+     border-radius: 10px;
     }
 
     .header-dark .navbar .action-button,
@@ -230,13 +239,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
-} 
-/* .card {
-  width: 30vw;
   margin: 20px;
 
-}  */
+} 
+@media screen and (max-width: 768px) {
+  .card-container-das {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 
 /* CSS cho chế độ mobile */
 @media (max-width: 767px) {
@@ -438,34 +450,34 @@
 .container-nav{
   background-color: #f2f2f2; 
   border-radius: 15px;
-  border: 1.5px solid red;
+  border: 1.5px solid rgb(38, 158, 8);
   color: black;
 
 }
 .container-nav-home{
   background-color: #f2f2f2; 
   border-radius: 15px;
-  border: 1.5px solid red;
+  border: 1.5px solid rgb(38, 158, 8);
   color: black;
   margin-right: 5px;
 }
 .container-nav-user {
   background-color: #f2f2f2; 
   border-radius: 15px;
-  border: 1.5px solid red;
+  border: 1.5px solid rgb(38, 158, 8);
   color: black;
 }
 @media screen and (max-width: 480px) {
   .container-nav{
   background-color: #f2f2f2; 
   border-radius: 15px;
-  border: 1.5px solid red;
+  border: 1.5px solid rgb(38, 158, 8);
   color: black;
 }
 .container-nav-home{
   background-color: #f2f2f2; 
   border-radius: 15px;
-  border: 1.5px solid red;
+  border: 1.5px solid rgb(38, 158, 8);
   color: black;
 }
 }
@@ -477,7 +489,7 @@
     border-radius: 15px;
     display: flex;
     justify-content: center;
-    align-items: center;    border: 1.5px solid red;
+    align-items: center;     border: 1.5px solid rgb(38, 158, 8);
     color: black;
 }
 .container-nav-home{
@@ -488,7 +500,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1.5px solid red;
+    border: 1.5px solid rgb(38, 158, 8);
     color: black;
 }
 .container-nav-user{
@@ -499,9 +511,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1.5px solid red;
+    border: 1.5px solid rgb(38, 158, 8);
     color: black;
 }
+.fa-user{display: none;}
 }
 .carousel-inner .carousel-item img {
   max-width: 100%;
@@ -741,6 +754,7 @@ margin-top: 10px;
   width: 100%;
   height: 200px;
 }
+.fa-cogs{display: none;}
 
 }
 
@@ -761,6 +775,13 @@ margin-top: 10px;
   width: 500px;
   height: 500px;
 }
+.login-user:hover {
+  color: green;
+}
+.login-user {
+  color: rgb(0, 0, 0);
+}
+
   </style>
 </head>
 <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
@@ -788,8 +809,9 @@ margin-top: 10px;
   <div class="header-dark header-small">
     <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
       <div class="container">
-        <a class="navbar-brand "style="color: green;" href="/">VKBSTORE</a
-        >
+        <a class="navbar-brand" style="color: green; width: 70px; height: 70px; " href="/">
+          <img src="https://res.cloudinary.com/drvrfmcji/image/upload/v1689326077/logo/z4515583223665_d617b71149b5a7c60c43193da4a53664_jlyvni.jpg" alt="VKBSTORE Logo">
+        </a>
         <button
           class="navbar-toggler"
           data-toggle="collapse"
@@ -802,21 +824,20 @@ margin-top: 10px;
           <ul class="nav navbar-nav">
             <div class="container-nav-home">
               <li class="nav-item" role="presentation">
-                <a class="nav-link" href="/">Trang chủ</a>
+               <a class="nav-link" href="/">  <i class="fas fa-home"></i> Trang chủ</a>
               </li>
             </div>
           
               <% if(isLogin.name !== undefined) { %> <% if(isLogin.role === "admin") {
                 %>
                 <div class="container-nav">
-            <li class="dropdown" >
+            <li class="dropdown">
               <a
                 class="dropdown-toggle nav-link dropdown-toggle"
                 data-toggle="dropdown"
                 aria-expanded="false"
                 href="#"
-                
-                >Chức năng
+                ><i class="fas fa-cogs"></i>Chức năng
               </a>
               <div class="dropdown-menu" role="menu">
                 <a class="dropdown-item" role="presentation" href="/users/dashboard"
@@ -867,12 +888,9 @@ margin-top: 10px;
                 style="color: #e9fa00;"
               >
                 <i class="fa-solid fa-user" style="margin-right: 5px;color: black;"></i>
-                <span style="color: #000000;"><%= isLogin.name %></span>
+                <span class="login-user"><%= isLogin.name %></span>
                 </a>
-            
-
-            
-                <div class="dropdown-menu" >
+                <div class="dropdown-menu"  >
                     <a class="dropdown-item" href="/users/edit">
                       <i class="fa-sharp fa-regular fa-address-card fa-fw" style="margin-right: 5px;"></i>
                       Profile
@@ -895,7 +913,7 @@ margin-top: 10px;
               <div class="buttons">
                 <a class="bbtn btn-light action-button" href="/users/login" style="background-color: #cb2b2b; text-decoration: none;">
                   <strong>
-                    <i class="fa-solid fa-right-to-bracket mr-2"></i>Log in
+                    <i class="fa-solid fa-right-to-bracket mr-2 "></i>Log in
                   </strong>
                 </a>
               </div>
