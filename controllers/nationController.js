@@ -49,6 +49,7 @@ class NationController {
     }
     Nations.updateOne({ _id: req.params.nationId }, dataNew)
       .then(() => {
+        req.flash("success", "Sửa loại sản phẩm thành công ");
         return res.redirect("/nations");
       })
       .catch((err) => {

@@ -64,6 +64,24 @@
     
 </body>
 <script>
+    const form = document.getElementById('product-form');
+  
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevent form submission
+  
+      // Submit the form
+      form.submit();
+    });
+  
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const success = urlParams.get('success');
+      if (success) {
+        alert('Tạo sản phẩm thành công!');
+      }
+    });
+  </script>
+<script>
     // Show error message
     
         </script>

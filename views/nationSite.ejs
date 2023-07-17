@@ -31,7 +31,7 @@
                                 onclick="document.querySelector('#popup2').classList.remove('is-active')"></button>
                         </header>
                         <section class="modal-card-body">
-                            <form method="post" action="/nations">
+                            <form method="post" id="nation-form" action="/nations">
                                 <div class="field is-horizontal">
                                     <div class="field-label is-normal">
                                         <label class="label">Tên loại sản phẩm</label>
@@ -108,10 +108,10 @@
                                         <td>
                                             <div class="buttons are-small">
                                                 <a href="/nations/edit/<%=nation.id %>"><button
-                                                        class="btn btn-primary" style="margin: 3px;">Chỉnh sửa</button></a>
+                                                        class="btn btn-primary" style="margin: 3px;"> <i class="fas fa-edit"></i> </button></a>
                                                 <a href="/nations/delete/<%=nation.id %>"><button
                                                         onclick="return confirm('Are you sure ???')"
-                                                        class="btn btn-danger"style="margin: 3px;">Xóa</button></a>
+                                                        class="btn btn-danger"style="margin: 3px;"><i class="fas fa-trash"></i></button></a>
                                             </div></a>
                                         </td>
                                     </tr>
@@ -124,6 +124,24 @@
                 <!-- popup -->
 
     </body>
+    <script>
+        const form = document.getElementById('nation-form');
+      
+        form.addEventListener('submit', (event) => {
+          event.preventDefault(); // Prevent form submission
+      
+          // Submit the form
+          form.submit();
+        });
+      
+        window.addEventListener('DOMContentLoaded', () => {
+          const urlParams = new URLSearchParams(window.location.search);
+          const success = urlParams.get('success');
+          if (success) {
+            alert('Tạo sản phẩm thành công!');
+          }
+        });
+      </script>
     <script>
         $(document).ready(function () {
             $('#mytable').DataTable();

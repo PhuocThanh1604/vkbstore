@@ -38,7 +38,7 @@
                 <div class="text-align-left align-self-center">
                   <h1 class="h1 text-success"><b>SHOP</b> VKB</h1>
                   <h3 class="h2">Hiệu suất mạnh mẽ, nâng cấp linh hoạt, trải nghiệm tối ưu.</h3>
-                  <p>
+                  <p class="text-overflow">
                     Phù hợp định hiệu năng chạy cực kì linh hoạt các phần mềm văn phòng (word, excel) lướt Website cực êm, học tập cũng giống như thư giãn (màn hình sắc nét cùng hệ thống loa to rõ ràng) 
                     <!-- <a rel="sponsored" class="text-success" href="https://stories.freepik.com/" target="_blank">Freepik Stories</a>,
                     <a rel="sponsored" class="text-success" href="https://unsplash.com/" target="_blank">Unsplash</a> and
@@ -59,7 +59,7 @@
                 <div class="text-align-left">
                   <h1 class="h1 ">Hiệu suất mạnh mẽ</h1>
                   <h3 class="h2 ">Cộng đồng gaming đa dạng và thú vị</h3>
-                  <p class="text-light">
+                  <p class="text-light text-overflow">
                     Hiệu suất mạnh mẽ: Máy tính bàn thường có khả năng xử lý <strong>mạnh mẽ</strong>  với các bộ vi xử lý cao cấp, card đồ họa mạnh mẽ và dung lượng bộ nhớ lớn. 
                     
                     Điều này cho phép máy tính bàn xử lý các tác vụ nặng như đồ họa, game, xử lý video và công việc chuyên nghiệp một cách mượt mà và hiệu quả.
@@ -79,7 +79,7 @@
                 <div class="text-align-left">
                   <h1 class="h1 text-muted">Full Bộ Máy Tính</h1>
                   <h3 class="h2 text-overflow">Hiện đại đầy hiệu năng</h3>
-                  <p>
+                  <p class="text-overflow">
                     Giá trị và khả năng tùy chỉnh: Máy tính bàn thường có giá trị tốt hơn so với các thiết bị di động cùng cấu hình tương tự. Ngoài ra, người dùng có thể tùy chỉnh và xây dựng một chiếc máy tính bàn phù hợp với nhu cầu và ngân sách của mình. Thank you.
                   </p>
                 </div>
@@ -95,6 +95,7 @@
         <i class="fas fa-chevron-right"></i>
       </a>
     </div>
+
     
  
     <!-- End Banner Hero -->
@@ -230,6 +231,49 @@
         }
       }
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        function resizeCarouselImages() {
+          $('.carousel-item img').each(function() {
+            $(this).css('max-width', '100%');
+            $(this).css('height', 'auto');
+          });
+        }
+      
+        // Gọi hàm resizeCarouselImages khi trang web được tải hoặc kích thước cửa sổ thay đổi
+        $(window).on('load resize', function() {
+          resizeCarouselImages();
+        });
+      });
+      </script>
+      <script>
+        window.addEventListener('load', function() {
+          adjustCarouselItemHeight();
+        });
+        
+        window.addEventListener('resize', function() {
+          adjustCarouselItemHeight();
+        });
+        
+        function adjustCarouselItemHeight() {
+          var carouselItems = document.querySelectorAll('.carousel-item');
+          var maxHeight = 0;
+        
+          // Tìm chiều cao lớn nhất trong tất cả các item
+          carouselItems.forEach(function(item) {
+            var itemHeight = item.querySelector('.text-align-left').offsetHeight;
+            if (itemHeight > maxHeight) {
+              maxHeight = itemHeight;
+            }
+          });
+        
+          // Áp dụng chiều cao lớn nhất cho tất cả các item
+          carouselItems.forEach(function(item) {
+            item.querySelector('.text-align-left').style.height = maxHeight + 'px';
+          });
+        }
+        </script>
 <script>
   var players = JSON.parse('<%= JSON.stringify(players) %>');
   var itemsPerPage = 6;

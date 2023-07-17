@@ -516,11 +516,11 @@
 }
 .fa-user{display: none;}
 }
-.carousel-inner .carousel-item img {
+/* .carousel-inner .carousel-item img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-}
+} */
 .carousel-inner .carousel-item-detail img {
   max-width: 100%;
   max-height: 100%;
@@ -528,11 +528,11 @@
 }
 
 @media screen and (max-width: 768px) {
-  .carousel-inner-list .carousel-item img {
-  width: 150px; /* Kích thước chiều rộng mong muốn */
-  height: 100px; /* Kích thước chiều cao mong muốn */
-/* Giữ tỷ lệ khung hình và cắt bớt để lấp đầy khung */
-}
+  /* .carousel-inner-list .carousel-item img {
+  width: 150px; 
+  height: 100px; 
+
+} */
 .carousel-inner-list .carousel-item-detail img {
   width: 150px; /* Kích thước chiều rộng mong muốn */
   height: 100px; /* Kích thước chiều cao mong muốn */
@@ -540,11 +540,11 @@
 }
 }
 @media screen and (max-width: 768px) {
-  .carousel-inner .carousel-item img {
-  width: 250px; /* Kích thước chiều rộng mong muốn */
-  height: 250px; /* Kích thước chiều cao mong muốn */
-  object-fit: none; /* Giữ tỷ lệ khung hình và cắt bớt để lấp đầy khung */
-}
+  /* .carousel-inner .carousel-item img {
+  width: 250px;
+  height: 250px; 
+  object-fit: none;
+} */
 .carousel-inner .carousel-item-detail img {
       width: 100%;
       height: auto;
@@ -781,7 +781,28 @@ margin-top: 10px;
 .login-user {
   color: rgb(0, 0, 0);
 }
+.carousel-item img {
+  max-width: 100%;
+  height: auto;
+}
 
+@media (max-width: 767px) {
+  .carousel-item img {
+    max-width: 50%;
+  }
+
+
+
+.carousel-item .text-overflow {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4; /* Số dòng tối đa hiển thị */
+  line-height: 1.5; /* Độ cao dòng */
+  max-height: 3em; /* Chiều cao tối đa cho nội dung */
+}
+}
   </style>
 </head>
 <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
